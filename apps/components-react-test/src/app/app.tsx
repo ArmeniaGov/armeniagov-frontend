@@ -1,4 +1,4 @@
-import { Button } from '@armeniagov-frontend/components-react';
+import { Button } from '@armeniagov/components-react';
 
 export function App() {
   return (
