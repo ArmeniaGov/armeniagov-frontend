@@ -1,0 +1,9 @@
+@include armeniagov-exports("armeniagov/utilities/visually-hidden") {
+  .armeniagov-visually-hidden {
+    @include armeniagov-visually-hidden;
+  }
+
+  .armeniagov-visually-hidden-focusable {
+    @include armeniagov-visually-hidden-focusable;
+  }
+}

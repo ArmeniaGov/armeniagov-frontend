@@ -1,0 +1,35 @@
+@include armeniagov-exports("armeniagov/core/links") {
+
+  %armeniagov-link {
+    @include armeniagov-link-common;
+    @include armeniagov-link-style-default;
+    @include armeniagov-link-print-friendly;
+  }
+
+  .armeniagov-link {
+    @extend %armeniagov-link;
+  }
+
+  // Variant classes should always be used in conjunction with the .armeniagov-link
+  // class, so we do not need the common link styles as they will be inherited.
+
+  .armeniagov-link--muted {
+    @include armeniagov-link-style-muted;
+  }
+
+  .armeniagov-link--text-colour {
+    @include armeniagov-link-style-text;
+  }
+
+  .armeniagov-link--inverse {
+    @include armeniagov-link-style-inverse;
+  }
+
+  .armeniagov-link--no-underline {
+    @include armeniagov-link-style-no-underline;
+  }
+
+  .armeniagov-link--no-visited-state {
+    @include armeniagov-link-style-no-visited-state;
+  }
+}

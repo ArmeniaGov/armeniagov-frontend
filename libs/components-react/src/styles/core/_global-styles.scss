@@ -1,0 +1,19 @@
+@import "links";
+@import "typography";
+
+@mixin armeniagov-global-styles {
+  a {
+    @extend %armeniagov-link;
+  }
+
+  p {
+    @extend %armeniagov-body-m;
+  }
+}
+
+@include armeniagov-exports("armeniagov/core/global-styles") {
+
+  @if $armeniagov-global-styles == true {
+    @include armeniagov-global-styles;
+  }
+}

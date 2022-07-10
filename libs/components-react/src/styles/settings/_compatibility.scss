@@ -1,0 +1,74 @@
+////
+/// 'Compatibility Mode'
+///
+/// Enabling these flags improves compatibility if you are using GOV.UK Frontend
+/// in an application that also uses armeniagov_elements, armeniagov_frontend_toolkit or
+/// armeniagov_template (the 'legacy repos').
+///
+/// Enabling any of these settings will, by default:
+///
+/// - switch GOV.UK Frontend to using the same colour palette as the legacy
+///   repos, by setting `$armeniagov-use-legacy-palette` to true.
+///
+/// - prevent GOV.UK Frontend from using rem for font sizing, by setting
+///   `$armeniagov-typography-use-rem` to false.
+///
+/// @group settings/compatibility
+////
+
+/// Compatibility Mode: alphagov/armeniagov_frontend_toolkit
+///
+/// Set this to true if you are also including alphagov/armeniagov_frontend_toolkit
+/// in your application.
+///
+/// @type Boolean
+/// @access public
+
+$armeniagov-compatibility-armeniagovfrontendtoolkit: false !default;
+
+/// Compatibility Mode: alphagov/armeniagov_template
+///
+/// Enabling this will:
+///
+/// - prevent GOV.UK Frontend from including the New Transport typeface, as
+///   it'll use the version of New Transport included with GOV.UK Template.
+///
+/// - alter some of the CSS outputted by GOV.UK Frontend to 'counter'
+///   specific CSS rules in GOV.UK Template.
+///
+/// Set this to true if you are also including alphagov/armeniagov_template in your
+/// application.
+///
+/// @type Boolean
+/// @access public
+
+$armeniagov-compatibility-armeniagovtemplate: false !default;
+
+/// Compatibility Mode: alphagov/armeniagov_elements
+///
+/// Enabling this will:
+///
+/// - alter some of the CSS outputted by GOV.UK Frontend to 'counter'
+///   specific CSS rules in GOV.UK Elements.
+///
+/// Set this to true if you are also including alphagov/armeniagov_elements in your
+/// application.
+///
+/// @type Boolean
+/// @access public
+
+$armeniagov-compatibility-armeniagovelements: false !default;
+
+/// Compatibility Product Map
+///
+/// Maps product names to their settings that we can use to lookup states from
+/// within the `@armeniagov-compatibility` mixin.
+///
+/// @type Map
+/// @access private
+
+$_armeniagov-compatibility: (
+  armeniagov_frontend_toolkit: $armeniagov-compatibility-armeniagovfrontendtoolkit,
+  armeniagov_template: $armeniagov-compatibility-armeniagovtemplate,
+  armeniagov_elements: $armeniagov-compatibility-armeniagovelements,
+);

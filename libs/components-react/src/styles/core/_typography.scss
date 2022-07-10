@@ -1,0 +1,186 @@
+@include armeniagov-exports("armeniagov/core/typography") {
+
+  // Headings
+
+  %armeniagov-heading-xl {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 48, $weight: bold);
+
+    display: block;
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(8, "bottom");
+  }
+
+  .armeniagov-heading-xl {
+    @extend %armeniagov-heading-xl;
+  }
+
+  %armeniagov-heading-l {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 36, $weight: bold);
+
+    display: block;
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-heading-l {
+    @extend %armeniagov-heading-l;
+  }
+
+  %armeniagov-heading-m {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 24, $weight: bold);
+
+    display: block;
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-heading-m {
+    @extend %armeniagov-heading-m;
+  }
+
+  %armeniagov-heading-s {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 19, $weight: bold);
+
+    display: block;
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-heading-s {
+    @extend %armeniagov-heading-s;
+  }
+
+  // Captions to be used inside headings
+
+  .armeniagov-caption-xl {
+    @include armeniagov-font($size: 27);
+
+    display: block;
+
+    margin-bottom: armeniagov-spacing(1);
+
+    color: $armeniagov-secondary-text-colour;
+  }
+
+  .armeniagov-caption-l {
+    @include armeniagov-font($size: 24);
+
+    display: block;
+
+    margin-bottom: armeniagov-spacing(1);
+    color: $armeniagov-secondary-text-colour;
+
+    @include armeniagov-media-query($from: tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  .armeniagov-caption-m {
+    @include armeniagov-font($size: 19);
+
+    display: block;
+
+    color: $armeniagov-secondary-text-colour;
+  }
+
+  // Body (paragraphs)
+
+  %armeniagov-body-l {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 24);
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-body-l {
+    @extend %armeniagov-body-l;
+  }
+
+  %armeniagov-body-m {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 19);
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-body-m {
+    @extend %armeniagov-body-m;
+  }
+
+  %armeniagov-body-s {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 16);
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-body-s {
+    @extend %armeniagov-body-s;
+  }
+
+  %armeniagov-body-xs {
+    @include armeniagov-text-colour;
+    @include armeniagov-font($size: 14);
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-body-xs {
+    @extend %armeniagov-body-xs;
+  }
+
+  // Usage aliases
+
+  // Using extend to alias means we also inherit any contextual adjustments that
+  // refer to the 'original' class name
+
+  .armeniagov-body-lead {
+    @extend %armeniagov-body-l;
+  }
+
+  .armeniagov-body {
+    @extend %armeniagov-body-m;
+  }
+
+  // Contextual adjustments
+  // Add top padding to headings that appear directly after paragraphs.
+
+  %armeniagov-body-l  + %armeniagov-heading-l {
+    padding-top: armeniagov-spacing(1);
+
+    @include armeniagov-media-query($from: tablet) {
+      padding-top: armeniagov-spacing(2);
+    }
+  }
+
+  %armeniagov-body-m  + %armeniagov-heading-l,
+  %armeniagov-body-s  + %armeniagov-heading-l,
+  %armeniagov-list + %armeniagov-heading-l {
+    @include armeniagov-responsive-padding(4, "top");
+  }
+
+  %armeniagov-body-m + %armeniagov-heading-m,
+  %armeniagov-body-s + %armeniagov-heading-m,
+  %armeniagov-list + %armeniagov-heading-m,
+  %armeniagov-body-m + %armeniagov-heading-s,
+  %armeniagov-body-s + %armeniagov-heading-s,
+  %armeniagov-list + %armeniagov-heading-s {
+    padding-top: armeniagov-spacing(1);
+
+    @include armeniagov-media-query($from: tablet) {
+      padding-top: armeniagov-spacing(2);
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "components-react": "libs/components-react",
     "components-react-test": "apps/components-react-test",
     "components-react-test-e2e": "apps/components-react-test-e2e"
   }

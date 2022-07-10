@@ -1,0 +1,24 @@
+// stylelint-disable declaration-no-important
+@include armeniagov-exports("armeniagov/overrides/display") {
+  .armeniagov-\!-display-inline {
+    display: inline !important;
+  }
+
+  .armeniagov-\!-display-inline-block {
+    display: inline-block !important;
+  }
+
+  .armeniagov-\!-display-block {
+    display: block !important;
+  }
+
+  .armeniagov-\!-display-none {
+    display: none !important;
+  }
+
+  @include armeniagov-media-query($media-type: print) {
+    .armeniagov-\!-display-none-print {
+      display: none !important;
+    }
+  }
+}

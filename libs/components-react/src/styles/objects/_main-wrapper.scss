@@ -1,0 +1,53 @@
+@import "../base";
+
+////
+/// @group objects/layout
+////
+
+// Example usage with Breadcrumbs, phase banners, back links:
+// <div class="armeniagov-width-container">
+//   <!-- Breadcrumbs, phase banners, back links are placed in here. -->
+//   <div class="armeniagov-main-wrapper">
+//       <!-- Wrapper for the main content of your page which applies padding
+//            to the top / bottom -->
+//   </div>
+// </div>
+//
+// Example usage without Breadcrumbs, phase banners, back links:
+// <div class="armeniagov-width-container">
+//   <div class="armeniagov-main-wrapper armeniagov-main-wrapper--l">
+//       <!-- Wrapper for the main content of your page which applies padding
+//            to the top / bottom -->
+//   </div>
+// </div>
+
+@include armeniagov-exports("armeniagov/objects/main-wrapper") {
+  .armeniagov-main-wrapper {
+    // In IE11 the `main` element can be used, but is not recognized  –
+    // meaning it's not defined in IE's default style sheet,
+    // so it uses CSS initial value, which is inline.
+    display: block;
+    padding-top: armeniagov-spacing(4);
+    padding-bottom: armeniagov-spacing(4);
+
+    @include armeniagov-media-query($from: tablet) {
+      // This spacing is manually adjusted to replicate the margin of
+      // armeniagov-heading-xl (50px) minus the spacing of back link and
+      // breadcrumbs (10px)
+      padding-top: armeniagov-spacing(7);
+      padding-bottom: armeniagov-spacing(7);
+    }
+  }
+
+  // Using the `.armeniagov-main-wrapper--auto-spacing` modifier should apply the
+  // correct spacing depending on whether there are any elements
+  // (such the back link, breadcrumbs or phase banner components) before the
+  // `.armeniagov-main-wrapper` in the `armeniagov-width-container`.
+  //
+  // If you need to control the spacing manually, use the
+  // `armeniagov-main-wrapper--l` modifier instead.
+  .armeniagov-main-wrapper--auto-spacing:first-child,
+  .armeniagov-main-wrapper--l {
+    @include armeniagov-responsive-padding(8, "top");
+  }
+}

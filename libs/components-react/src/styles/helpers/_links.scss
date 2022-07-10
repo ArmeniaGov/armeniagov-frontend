@@ -1,0 +1,427 @@
+////
+/// @group helpers/links
+////
+
+/// Common link styles
+///
+/// Provides the typography and focus state, regardless of link style.
+///
+/// @access public
+
+@mixin armeniagov-link-common {
+  @include armeniagov-typography-common;
+  @include armeniagov-link-decoration;
+
+  &:hover {
+    @include armeniagov-link-hover-decoration;
+  }
+
+  &:focus {
+    @include armeniagov-focused-text;
+  }
+}
+
+/// Link decoration
+///
+/// Provides the text decoration for links, including thickness and underline
+/// offset. Use this mixin only if you cannot use the `armeniagov-link-common` mixin.
+///
+/// @access public
+@mixin armeniagov-link-decoration {
+  text-decoration: underline;
+
+  @if $armeniagov-new-link-styles {
+    @if $armeniagov-link-underline-thickness {
+      text-decoration-thickness: $armeniagov-link-underline-thickness;
+    }
+
+    @if $armeniagov-link-underline-offset {
+      text-underline-offset: $armeniagov-link-underline-offset;
+    }
+  }
+}
+
+/// Link hover decoration
+///
+/// Provides the text decoration for links in their hover state, for you to use
+/// within a `:hover` pseudo-selector. Use this mixin only if you cannot use the
+/// `armeniagov-link-common` mixin.
+///
+/// @access public
+
+@mixin armeniagov-link-hover-decoration {
+  @if $armeniagov-new-link-styles and $armeniagov-link-hover-underline-thickness {
+    text-decoration-thickness: $armeniagov-link-hover-underline-thickness;
+    // Disable ink skipping on underlines on hover. Browsers haven't
+    // standardised on this part of the spec yet, so set both properties
+    text-decoration-skip-ink: none; // Chromium, Firefox
+    text-decoration-skip: none; // Safari
+  }
+}
+
+/// Default link styles
+///
+/// Makes links use the default unvisited, visited, hover and active colours.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-default;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-default {
+  &:link {
+    color: $armeniagov-link-colour;
+  }
+
+  &:visited {
+    color: $armeniagov-link-visited-colour;
+  }
+
+  &:hover {
+    color: $armeniagov-link-hover-colour;
+  }
+
+  &:active {
+    color: $armeniagov-link-active-colour;
+  }
+
+  // When focussed, the text colour needs to be darker to ensure that colour
+  // contrast is still acceptable
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector
+  // designed to make unvisited link  s a slightly darker blue when focussed, so
+  // we need to override the text colour for that combination of selectors so
+  // so that unvisited links styled as buttons do not end up with dark blue
+  // text when focussed.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      color: $armeniagov-focus-text-colour;
+    }
+  }
+}
+
+/// Error link styles
+///
+/// Makes links use the error colour. The link will darken if it's active or a
+/// user hovers their cursor over it.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-error;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-error {
+  &:link,
+  &:visited {
+    color: $armeniagov-error-colour;
+  }
+
+  &:hover {
+    color: scale-color($armeniagov-error-colour, $lightness: -30%);
+  }
+
+  &:active {
+    color: $armeniagov-error-colour;
+  }
+
+  // When focussed, the text colour needs to be darker to ensure that colour
+  // contrast is still acceptable
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector
+  // designed to make unvisited link  s a slightly darker blue when focussed, so
+  // we need to override the text colour for that combination of selectors so
+  // so that unvisited links styled as buttons do not end up with dark blue
+  // text when focussed.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      color: $armeniagov-focus-text-colour;
+    }
+  }
+}
+
+/// Success link styles
+///
+/// Makes links use the success colour. The link will darken if it's active or a
+/// user hovers their cursor over it.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-success;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-success {
+  &:link,
+  &:visited {
+    color: $armeniagov-success-colour;
+  }
+
+  &:hover {
+    color: scale-color($armeniagov-success-colour, $lightness: -30%);
+  }
+
+  &:active {
+    color: $armeniagov-success-colour;
+  }
+
+  // When focussed, the text colour needs to be darker to ensure that colour
+  // contrast is still acceptable
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector
+  // designed to make unvisited link  s a slightly darker blue when focussed, so
+  // we need to override the text colour for that combination of selectors so
+  // so that unvisited links styled as buttons do not end up with dark blue
+  // text when focussed.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      color: $armeniagov-focus-text-colour;
+    }
+  }
+}
+
+/// Muted link styles
+///
+/// Makes links use the secondary text colour. The link will darken if it's
+/// active or a user hovers their cursor over it.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-muted;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-muted {
+  &:link,
+  &:visited {
+    color: $armeniagov-secondary-text-colour;
+  }
+
+  &:hover,
+  &:active {
+    color: $armeniagov-text-colour;
+  }
+
+  // When focussed, the text colour needs to be darker to ensure that colour
+  // contrast is still acceptable
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector designed
+  // to make unvisited links a slightly darker blue when focussed, so we need to
+  // override the text colour for that combination of selectors.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      @include armeniagov-text-colour;
+    }
+  }
+}
+
+/// Text link styles
+///
+/// Makes links use the primary text colour, in all states. Use this mixin for
+/// navigation components, such as breadcrumbs or the back link.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-text;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-text {
+  &:link,
+  &:visited {
+    @include armeniagov-text-colour;
+  }
+
+  // Force a colour change on hover to work around a bug in Safari
+  // https://bugs.webkit.org/show_bug.cgi?id=224483
+  &:hover {
+    @if type-of($armeniagov-text-colour) == color {
+      color: rgba($armeniagov-text-colour, .99);
+    }
+  }
+
+  &:active,
+  &:focus {
+    @include armeniagov-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector designed
+  // to make unvisited links a slightly darker blue when focussed, so we need to
+  // override the text colour for that combination of selectors.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      @include armeniagov-text-colour;
+    }
+  }
+}
+
+/// Inverse link styles
+///
+/// Makes links white, in all states. Use this mixin if you're displaying links
+/// against a dark background.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-inverse;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-inverse {
+  &:link,
+  &:visited {
+    color: armeniagov-colour("white");
+  }
+
+  // Force a colour change on hover to work around a bug in Safari
+  // https://bugs.webkit.org/show_bug.cgi?id=224483
+  &:hover,
+  &:active {
+    color: rgba(armeniagov-colour("white"), .99);
+  }
+
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+
+  // alphagov/armeniagov_template includes a specific a:link:focus selector designed
+  // to make unvisited links a slightly darker blue when focussed, so we need to
+  // override the text colour for that combination of selectors.
+  @include armeniagov-compatibility(armeniagov_template) {
+    &:link:focus {
+      color: $armeniagov-focus-text-colour;
+    }
+  }
+}
+
+/// Default link styles, without a visited state
+///
+/// Makes links use the default unvisited, hover and active colours, with no
+/// distinct visited state.
+///
+/// Use this mixin when it's not helpful to distinguish between visited and
+/// non-visited links. For example, when you link to pages with
+/// frequently-changing content, such as the dashboard for an admin interface.
+///
+/// If you use this mixin in a component, you must also include the
+/// `armeniagov-link-common` mixin to get the correct focus and hover states.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-no-visited-state;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-no-visited-state {
+  &:link {
+    color: $armeniagov-link-colour;
+  }
+
+  &:visited {
+    color: $armeniagov-link-colour;
+  }
+
+  &:hover {
+    color: $armeniagov-link-hover-colour;
+  }
+
+  &:active {
+    color: $armeniagov-link-active-colour;
+  }
+
+  // When focussed, the text colour needs to be darker to ensure that colour
+  // contrast is still acceptable
+  &:focus {
+    color: $armeniagov-focus-text-colour;
+  }
+}
+
+/// Remove underline from links
+///
+/// Remove underlines from links unless the link is active or a user hovers
+/// their cursor over it. This has no effect in Internet Explorer 8 (IE8),
+/// because IE8 does not support `:not`.
+///
+/// @example scss
+///   .armeniagov-component__link {
+///     @include armeniagov-link-common;
+///     @include armeniagov-link-style-default;
+///     @include armeniagov-link-style-no-underline;
+///   }
+///
+/// @access public
+
+@mixin armeniagov-link-style-no-underline {
+  &:not(:hover):not(:active) {
+    text-decoration: none;
+  }
+}
+
+/// Include link destination when printing the page
+///
+/// If the user prints the page, add the destination URL after the link text, if
+/// the URL starts with `/`, `http://` or `https://`.
+///
+/// @access public
+
+@mixin armeniagov-link-print-friendly {
+  @include armeniagov-media-query($media-type: print) {
+    &[href^="/"],
+    &[href^="http://"],
+    &[href^="https://"] {
+      &:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+
+        // Because the URLs may be very long, ensure that they may be broken
+        // at arbitrary points if there are no otherwise acceptable break
+        // points in the line
+        word-wrap: break-word;
+      }
+    }
+  }
+}

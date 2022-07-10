@@ -1,0 +1,14 @@
+// stylelint-disable declaration-no-important
+@include armeniagov-exports("armeniagov/overrides/text-align") {
+  .armeniagov-\!-text-align-left {
+    text-align: left !important;
+  }
+
+  .armeniagov-\!-text-align-centre {
+    text-align: center !important;
+  }
+
+  .armeniagov-\!-text-align-right {
+    text-align: right !important;
+  }
+}

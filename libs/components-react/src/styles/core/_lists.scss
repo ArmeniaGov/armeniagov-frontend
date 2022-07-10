@@ -1,0 +1,66 @@
+@include armeniagov-exports("armeniagov/core/lists") {
+
+  %armeniagov-list {
+    @include armeniagov-font($size: 19);
+    @include armeniagov-text-colour;
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+    padding-left: 0;
+    list-style-type: none;
+
+    // Add a top margin for nested lists
+    %armeniagov-list {
+      margin-top: armeniagov-spacing(2);
+    }
+  }
+
+  %armeniagov-list > li {
+    // Lists without numbers or bullets should always have extra space between
+    // list items. Lists with numbers or bullets only have this extra space on
+    // tablet and above
+    margin-bottom: armeniagov-spacing(1);
+  }
+
+  .armeniagov-list {
+    @extend %armeniagov-list;
+  }
+
+  %armeniagov-list--bullet {
+    padding-left: armeniagov-spacing(4);
+    list-style-type: disc;
+  }
+
+  %armeniagov-list--number {
+    padding-left: armeniagov-spacing(4);
+    list-style-type: decimal;
+  }
+
+  %armeniagov-list--bullet > li,
+  %armeniagov-list--number > li {
+    margin-bottom: 0;
+
+    @include armeniagov-media-query($from: tablet) {
+      margin-bottom: armeniagov-spacing(1);
+    }
+  }
+
+  %armeniagov-list--spaced > li {
+    margin-bottom: armeniagov-spacing(2);
+
+    @include armeniagov-media-query($from: tablet) {
+      margin-bottom: armeniagov-spacing(3);
+    }
+  }
+
+  .armeniagov-list--bullet {
+    @extend %armeniagov-list--bullet;
+  }
+
+  .armeniagov-list--number {
+    @extend %armeniagov-list--number;
+  }
+
+  .armeniagov-list--spaced {
+    @extend %armeniagov-list--spaced;
+  }
+}

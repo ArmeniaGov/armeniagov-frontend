@@ -1,0 +1,56 @@
+@include armeniagov-exports("armeniagov/core/section-break") {
+
+  %armeniagov-section-break {
+    margin: 0;
+    border: 0;
+
+    // fix double-width section break and forced visible section break
+    // when combined with styles from alphagov/elements
+    @include armeniagov-compatibility(armeniagov_elements) {
+      height: 0;
+    }
+  }
+
+  .armeniagov-section-break {
+    @extend %armeniagov-section-break;
+  }
+
+  // Sizes
+
+  %armeniagov-section-break--xl {
+    @include armeniagov-responsive-margin(8, "top");
+    @include armeniagov-responsive-margin(8, "bottom");
+  }
+
+  .armeniagov-section-break--xl {
+    @extend %armeniagov-section-break--xl;
+  }
+
+  %armeniagov-section-break--l {
+    @include armeniagov-responsive-margin(6, "top");
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-section-break--l {
+    @extend %armeniagov-section-break--l;
+  }
+
+  %armeniagov-section-break--m {
+    @include armeniagov-responsive-margin(4, "top");
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-section-break--m {
+    @extend %armeniagov-section-break--m;
+  }
+
+  // Visible variant
+
+  %armeniagov-section-break--visible {
+    border-bottom: 1px solid $armeniagov-border-colour;
+  }
+
+  .armeniagov-section-break--visible {
+    @extend %armeniagov-section-break--visible;
+  }
+}

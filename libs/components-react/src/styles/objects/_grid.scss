@@ -1,0 +1,24 @@
+@import "../base";
+
+@include armeniagov-exports("armeniagov/objects/grid") {
+  .armeniagov-grid-row {
+    @include armeniagov-clearfix;
+    margin-right: - ($armeniagov-gutter-half);
+    margin-left: - ($armeniagov-gutter-half);
+  }
+
+  @each $width in map-keys($armeniagov-grid-widths) {
+    .armeniagov-grid-column-#{$width} {
+      @include armeniagov-grid-column($width);
+    }
+  }
+
+  // These *must* be defined in a separate loop as they have the same
+  // specificity as the non-breakpoint specific classes, so need to appear after
+  // them in the outputted CSS
+  @each $width in map-keys($armeniagov-grid-widths) {
+    .armeniagov-grid-column-#{$width}-from-desktop {
+      @include armeniagov-grid-column($width, $at: desktop);
+    }
+  }
+}

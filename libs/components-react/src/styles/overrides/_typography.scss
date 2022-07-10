@@ -1,0 +1,21 @@
+@include armeniagov-exports("armeniagov/overrides/typography") {
+  // Font size and line height
+
+  // Generate typography override classes for each responsive font map in the
+  // typography scale eg .armeniagov-\!-font-size-80
+  @each $size in map-keys($armeniagov-typography-scale) {
+    .armeniagov-\!-font-size-#{$size} {
+      @include armeniagov-typography-responsive($size, $important: true);
+    }
+  }
+
+  // Weights
+
+  .armeniagov-\!-font-weight-regular {
+    @include armeniagov-typography-weight-regular($important: true);
+  }
+
+  .armeniagov-\!-font-weight-bold {
+    @include armeniagov-typography-weight-bold($important: true);
+  }
+}

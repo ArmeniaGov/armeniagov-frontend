@@ -1,0 +1,61 @@
+////
+/// @group helpers/layout
+////
+
+/// Grid width percentage
+///
+/// @param {String} $key - Name of grid width (e.g. two-thirds)
+/// @return {Number} Percentage width
+/// @throw if `$key` is not a valid grid width
+/// @access public
+
+@function armeniagov-grid-width($key) {
+  @if map-has-key($armeniagov-grid-widths, $key) {
+    @return map-get($armeniagov-grid-widths, $key);
+  }
+
+  @error "Unknown grid width `#{$key}`";
+}
+
+/// Generate grid column styles
+///
+/// Creates a grid column with standard gutter between the columns.
+///
+/// Grid widths are defined in the `$armeniagov-grid-widths` map.
+///
+/// By default the column width changes from 100% to specified width at the
+/// 'tablet' breakpoint, but other breakpoints can be specified using the `$at`
+/// parameter.
+///
+/// @param {String} $width [full] name of a grid width from $armeniagov-grid-widths
+/// @param {String} $float [left] left | right
+/// @param {String} $at [tablet] - mobile | tablet | desktop | any custom breakpoint
+///
+/// @example scss - Default
+///   .armeniagov-grid-column-two-thirds {
+///     @include armeniagov-grid-column(two-thirds)
+///   }
+///
+/// @example scss - Customising the breakpoint where width percentage is applied
+///   .armeniagov-grid-column-one-half-at-desktop {
+///     @include armeniagov-grid-column(one-half, $at: desktop);
+///   }
+///
+/// @example scss - Customising the float direction
+///   .armeniagov-grid-column-one-half-right {
+///     @include armeniagov-grid-column(two-thirds, $float: right);
+///   }
+///
+/// @access public
+
+@mixin armeniagov-grid-column($width: full, $float: left, $at: tablet) {
+  box-sizing: border-box;
+  @if $at != desktop {
+    width: 100%;
+  }
+  padding: 0 $armeniagov-gutter-half;
+  @include armeniagov-media-query($from: $at) {
+    width: armeniagov-grid-width($width);
+    float: $float;
+  }
+}
