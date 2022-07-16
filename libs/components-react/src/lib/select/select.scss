@@ -1,0 +1,54 @@
+@import "../error-message/error-message";
+@import "../hint/hint";
+@import "../label/label";
+
+@include armeniagov-exports("armeniagov/component/select") {
+  .armeniagov-select {
+    @include armeniagov-font($size: 19, $line-height: 1.25);
+
+    box-sizing: border-box; // should this be global?
+    max-width: 100%;
+    height: 40px;
+    @if $armeniagov-typography-use-rem {
+      height: armeniagov-px-to-rem(40px);
+    }
+    padding: armeniagov-spacing(1); // was 5px 4px 4px - size of it should be adjusted to match other form elements
+    border: $armeniagov-border-width-form-element solid $armeniagov-input-border-colour;
+
+    // Default user agent colours for selects can have low contrast,
+    // and may look disabled (#2435)
+    color: $armeniagov-text-colour;
+    background-color: armeniagov-colour("white");
+
+    &:focus {
+      outline: $armeniagov-focus-width solid $armeniagov-focus-colour;
+      // Ensure outline appears outside of the element
+      outline-offset: 0;
+      // Double the border by adding its width again. Use `box-shadow` to do
+      // this instead of changing `border-width` (which changes element size) and
+      // since `outline` is already used for the yellow focus state.
+      box-shadow: inset 0 0 0 $armeniagov-border-width-form-element;
+
+      @include armeniagov-if-ie8 {
+        // IE8 doesn't support `box-shadow` so double the border with
+        // `border-width`.
+        border-width: $armeniagov-border-width-form-element * 2;
+      }
+    }
+  }
+
+  .armeniagov-select option:active,
+  .armeniagov-select option:checked,
+  .armeniagov-select:focus::-ms-value {
+    color: armeniagov-colour("white");
+    background-color: armeniagov-colour("blue");
+  }
+
+  .armeniagov-select--error {
+    border-color: $armeniagov-error-colour;
+
+    &:focus {
+      border-color: $armeniagov-input-border-colour;
+    }
+  }
+}

@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@armeniagov/components-react": [
-        "libs/components-react/src/index.ts"
-      ]
+      "@armeniagov/components-react": ["libs/components-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
