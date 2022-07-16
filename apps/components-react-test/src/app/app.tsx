@@ -3,7 +3,7 @@ import { Button, Select } from '@armeniagov/components-react';
 export function App() {
   return (
     <div>
-      <Button />
+      <Button>Hello Armenia!</Button>
   
       <Select
         id='city'
