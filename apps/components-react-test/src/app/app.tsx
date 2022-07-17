@@ -7,6 +7,7 @@ import {
   NotificationBanner,
   BackLink,
   Accordion,
+  Pagination,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -70,6 +71,15 @@ export function App() {
           content: <p className="armeniagov-body">Hello pals</p>
         }]}/>
       </div>
+
+      <br/><hr/><br/>
+
+      <Pagination
+        pageCount={10}
+        pageRadius={2}
+        currentPage={5}
+        onPageChange={_ => ({})}
+      />
     </div>
   );
 }

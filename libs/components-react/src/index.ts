@@ -1,3 +1,4 @@
+export * from './lib/pagination/pagination';
 export * from './lib/accordion/accordion';
 export * from './lib/back-link/back-link';
 export * from './lib/notification-banner/notification-banner';
