@@ -1,0 +1,128 @@
+@import "../../styles/_base.scss";
+
+@include armeniagov-exports("armeniagov/component/tabs") {
+  .armeniagov-tabs {
+    @include armeniagov-responsive-margin(1, "top");
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-tabs__title {
+    @include armeniagov-font($size: 19);
+    @include armeniagov-text-colour;
+    margin-bottom: armeniagov-spacing(2);
+  }
+
+  .armeniagov-tabs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-tabs__list-item {
+    @include armeniagov-font($size: 19);
+    margin-left: armeniagov-spacing(5);
+
+    &:before {
+      @include armeniagov-text-colour;
+      content: "\2014 "; // "— "
+      margin-left: armeniagov-spacing(-5);
+      padding-right: armeniagov-spacing(1);
+    }
+  }
+
+  .armeniagov-tabs__tab {
+    @include armeniagov-link-common;
+    @include armeniagov-link-style-default;
+
+    display: inline-block;
+    margin-bottom: armeniagov-spacing(2);
+  }
+
+  .armeniagov-tabs__panel {
+    @include armeniagov-responsive-margin(8, "bottom");
+  }
+
+  @include armeniagov-media-query($from: tablet) {
+    .armeniagov-tabs__list {
+      @include armeniagov-clearfix;
+      margin-bottom: 0;
+      border-bottom: 1px solid $armeniagov-border-colour;
+    }
+
+    .armeniagov-tabs__title {
+      display: none;
+    }
+
+    .armeniagov-tabs__list-item {
+      position: relative;
+
+      margin-right: armeniagov-spacing(1);
+      margin-bottom: 0;
+      margin-left: 0;
+      padding: armeniagov-spacing(2) armeniagov-spacing(4);
+
+      float: left;
+      background-color: armeniagov-colour("light-grey", $legacy: "grey-4");
+      text-align: center;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    .armeniagov-tabs__list-item--selected {
+      $border-width: 1px;
+
+      position: relative;
+
+      margin-top: armeniagov-spacing(-1);
+
+      // Compensation for border (otherwise we get a shift)
+      margin-bottom: -$border-width;
+      padding-top: armeniagov-spacing(3) - $border-width;
+      padding-right: armeniagov-spacing(4) - $border-width;
+      padding-bottom: armeniagov-spacing(3) + $border-width;
+      padding-left: armeniagov-spacing(4) - $border-width;
+
+      border: $border-width solid $armeniagov-border-colour;
+      border-bottom: 0;
+
+      background-color: $armeniagov-body-background-colour;
+
+      .armeniagov-tabs__tab {
+        text-decoration: none;
+      }
+    }
+
+    .armeniagov-tabs__tab {
+      @include armeniagov-link-style-text;
+
+      margin-bottom: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .armeniagov-tabs__panel {
+      @include armeniagov-responsive-margin(0, "bottom");
+      padding: armeniagov-spacing(6) armeniagov-spacing(4);
+      border: 1px solid $armeniagov-border-colour;
+      border-top: 0;
+
+      &> :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .armeniagov-tabs__panel--hidden {
+      display: none;
+    }
+  }
+}

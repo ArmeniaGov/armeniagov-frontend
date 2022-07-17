@@ -9,6 +9,7 @@ import {
   Accordion,
   Pagination,
   SummaryList,
+  Tabs,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -99,6 +100,21 @@ export function App() {
           content: <>72 Guild Street<br />London<br />SE23 6FH</>,
           changeable: true,
           changeText: 'Change Address'
+        }]}
+      />
+
+      <br/><hr/><br/>
+
+      <Tabs
+        tabs={[{
+          title: 'First',
+          content: <>Hello <b>Buddy!</b></>
+        }, {
+          title: 'Second',
+          content: <>Hello <b>Pals!</b></>
+        }, {
+          title: 'Third',
+          content: <>Hello <b>Bros!</b></>
         }]}
       />
     </div>

@@ -1,3 +1,4 @@
+export * from './lib/tabs/tabs';
 export * from './lib/summary-list/summary-list';
 export * from './lib/pagination/pagination';
 export * from './lib/accordion/accordion';
