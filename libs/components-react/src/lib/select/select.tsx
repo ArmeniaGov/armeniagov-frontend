@@ -5,11 +5,12 @@ export interface SelectProps {
   title: string;
   hint?: string;
   options: { text: string; value: string }[];
+  className?: string;
 }
 
 export function Select(props: SelectProps) {
   return (
-    <div className="armeniagov-form-group">
+    <div className={`armeniagov-form-group ${props.className ? props.className : ''}`}>
       <label className="armeniagov-label" htmlFor={props.id}>
         {props.title}
       </label>

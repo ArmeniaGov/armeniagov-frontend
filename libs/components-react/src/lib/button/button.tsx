@@ -6,6 +6,7 @@ export interface ButtonProps {
   secondary?: boolean;
   warning?: boolean;
   disabled?: boolean;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -16,6 +17,7 @@ export function Button(props: ButtonProps) {
   if(props.secondary) classes.push('armeniagov-button--secondary');
   if(props.warning) classes.push('armeniagov-button--warning');
   if(props.disabled) classes.push('armeniagov-button--disabled');
+  if(props.className) classes.push(props.className);
 
   return (
     <button className={classes.join(' ')}>

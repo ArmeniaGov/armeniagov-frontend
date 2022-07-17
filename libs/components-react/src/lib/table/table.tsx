@@ -18,11 +18,12 @@ export interface TableProps {
   captionSize?: 's' | 'm' | 'l' | 'xl'
   headers: {text: string; size?: WidthOptions}[];
   items: string[][];
+  className?: string;
 }
 
 export function Table(props: TableProps) {
   return (
-    <table className="armeniagov-table">
+    <table className={`armeniagov-table ${props.className ? props.className : ''}`}>
       <caption className={`armeniagov-table__caption armeniagov-table__caption--${props.captionSize ? props.captionSize : 'l'}`}>
         { props.caption }
       </caption>
