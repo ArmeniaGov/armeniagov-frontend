@@ -1,0 +1,91 @@
+@import "../../styles/_base.scss";
+
+@include armeniagov-exports("armeniagov/component/details") {
+    .armeniagov-details {
+      @include armeniagov-font($size: 19);
+      @include armeniagov-text-colour;
+      @include armeniagov-responsive-margin(6, "bottom");
+  
+      display: block;
+    }
+  
+    .armeniagov-details__summary {
+      // Make the focus outline shrink-wrap the text content of the summary
+      display: inline-block;
+  
+      // Absolutely position the marker against this element
+      position: relative;
+  
+      margin-bottom: armeniagov-spacing(1);
+  
+      // Allow for absolutely positioned marker and align with disclosed text
+      padding-left: armeniagov-spacing(4) + $armeniagov-border-width;
+  
+      // Style the summary to look like a link...
+      color: $armeniagov-link-colour;
+      cursor: pointer;
+  
+      &:hover {
+        color: $armeniagov-link-hover-colour;
+      }
+  
+      &:focus {
+        @include armeniagov-focused-text;
+      }
+    }
+  
+    // ...but only underline the text, not the arrow
+    .armeniagov-details__summary-text {
+      @include armeniagov-link-decoration;
+    }
+  
+    .armeniagov-details__summary:hover .armeniagov-details__summary-text {
+      @include armeniagov-link-hover-decoration;
+    }
+  
+    // Remove the underline when focussed to avoid duplicate borders
+    .armeniagov-details__summary:focus .armeniagov-details__summary-text {
+      text-decoration: none;
+    }
+  
+    // Remove the default details marker so we can style our own consistently and
+    // ensure it displays in Firefox (see implementation.md for details)
+    .armeniagov-details__summary::-webkit-details-marker {
+      display: none;
+    }
+  
+    // Append our own open / closed marker using a pseudo-element
+    .armeniagov-details__summary:before {
+      content: "";
+      position: absolute;
+  
+      top: -1px;
+      bottom: 0;
+      left: 0;
+  
+      margin: auto;
+  
+      @include armeniagov-shape-arrow($direction: right, $base: 14px);
+  
+      .armeniagov-details[open] > & {
+        @include armeniagov-shape-arrow($direction: down, $base: 14px);
+      }
+    }
+  
+    .armeniagov-details__text {
+      padding-top: armeniagov-spacing(3);
+      padding-bottom: armeniagov-spacing(3);
+      padding-left: armeniagov-spacing(4);
+      border-left: $armeniagov-border-width solid $armeniagov-border-colour;
+    }
+  
+    .armeniagov-details__text p {
+      margin-top: 0;
+      margin-bottom: armeniagov-spacing(4);
+    }
+  
+    .armeniagov-details__text > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  

@@ -1,6 +1,5 @@
 import './select.scss';
 
-/* eslint-disable-next-line */
 export interface SelectProps {
   id: string;
   title: string;
