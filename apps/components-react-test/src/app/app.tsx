@@ -3,6 +3,7 @@ import {
   Select,
   Details,
   Table,
+  Panel,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -36,6 +37,10 @@ export function App() {
         headers={[{text: 'Date', size: WidthOptions['1/2']}, {text: 'Amounts'}]}
         items={[['First 6 weeks', '£109.80 per week'], ['Next 33 weeks', '£109.80 per week'], ['Total estimated pay', '£4,282.20']]}
       />
+
+      <br/><hr/><br/>
+
+      <Panel confirmation header='Application complete'>Your reference number<br/><strong>HDJ2123F</strong></Panel>
     </div>
   );
 }
