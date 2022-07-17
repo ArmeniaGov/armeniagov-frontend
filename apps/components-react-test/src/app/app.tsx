@@ -1,5 +1,6 @@
 import {
   Header,
+  Breadcrumbs,
   Button,
   Select,
   Details,
@@ -33,6 +34,23 @@ export function App() {
           title: 'Link Three',
           href: '/three'
         }]}
+      />
+
+      <br/><hr/><br/>
+
+      <Breadcrumbs
+        items={[{
+          title: 'Home',
+          href: '/'
+        }, {
+          title: 'Passports, travel and living abroad',
+          href: '/passports-travel-living-abroad'
+        }, {
+          title: 'Travel abroad',
+          href: '/passports-travel-living-abroad/travel-abroad'
+        }]}
+        preventDefault
+        onBreadcrumbClick={console.log}
       />
 
       <br/><hr/><br/>
