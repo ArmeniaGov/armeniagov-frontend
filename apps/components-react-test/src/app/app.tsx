@@ -5,6 +5,7 @@ import {
   Table,
   Panel,
   NotificationBanner,
+  BackLink,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -14,7 +15,7 @@ export function App() {
       <Button>Hello Armenia!</Button>
 
       <br/><hr/><br/>
-  
+
       <Select
         id='city'
         title='City'
@@ -51,6 +52,12 @@ export function App() {
             View application
           </a>.
       </NotificationBanner>
+
+      <br/><hr/><br/>
+
+      <BackLink href='#'>Go back</BackLink>
+
+      <br/><hr/><br/>
     </div>
   );
 }
