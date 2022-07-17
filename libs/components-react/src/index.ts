@@ -1,3 +1,4 @@
+export * from './lib/warning-text/warning-text';
 export * from './lib/tag/tag';
 export * from './lib/phase-banner/phase-banner';
 export * from './lib/tabs/tabs';

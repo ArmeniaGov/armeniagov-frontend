@@ -12,6 +12,7 @@ import {
   Tabs,
   PhaseBanner,
   Tag,
+  WarningText,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -134,6 +135,8 @@ export function App() {
       <Tag color='orange'>Armenia</Tag>
 
       <br/><hr/><br/>
+
+      <WarningText>You can be fined up to 5000 USD Dollars if you do not obey and SLAP BASS NOW</WarningText>
     </div>
   );
 }
