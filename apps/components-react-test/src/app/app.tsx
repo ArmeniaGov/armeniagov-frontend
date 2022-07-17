@@ -4,6 +4,7 @@ import {
   Details,
   Table,
   Panel,
+  NotificationBanner,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -41,6 +42,15 @@ export function App() {
       <br/><hr/><br/>
 
       <Panel confirmation header='Application complete'>Your reference number<br/><strong>HDJ2123F</strong></Panel>
+
+      <br/><hr/><br/>
+
+      <NotificationBanner header='Success' success>
+          You have 7 days left to send your application.
+          <a className="armeniagov-notification-banner__link" href="#1">
+            View application
+          </a>.
+      </NotificationBanner>
     </div>
   );
 }

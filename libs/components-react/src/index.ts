@@ -1,3 +1,4 @@
+export * from './lib/notification-banner/notification-banner';
 export * from './lib/panel/panel';
 export * from './lib/table/table';
 export * from './lib/label/label';
