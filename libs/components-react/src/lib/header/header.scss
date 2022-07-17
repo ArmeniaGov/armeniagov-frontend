@@ -1,0 +1,358 @@
+@import "../../styles/_base.scss";
+@import "../../styles/objects/width-container";
+
+@include armeniagov-exports("armeniagov/component/header") {
+
+  $armeniagov-header-background: armeniagov-colour("black");
+  $armeniagov-header-border-color: $armeniagov-brand-colour;
+  $armeniagov-header-border-width: armeniagov-spacing(2);
+  $armeniagov-header-text: armeniagov-colour("white");
+  $armeniagov-header-link-active: #1d8feb;
+  $armeniagov-header-nav-item-border-color: #2e3133;
+  $armeniagov-header-link-underline-thickness: 3px;
+
+  .armeniagov-header {
+    @include armeniagov-font($size: 16);
+
+    border-bottom: armeniagov-spacing(2) solid armeniagov-colour("white");
+    color: $armeniagov-header-text;
+    background: $armeniagov-header-background;
+  }
+
+  .armeniagov-header__container--full-width {
+    padding: 0 armeniagov-spacing(3);
+    border-color: $armeniagov-header-border-color;
+
+    .armeniagov-header__menu-button {
+      right: armeniagov-spacing(3);
+    }
+  }
+
+  .armeniagov-header__container {
+    @include armeniagov-clearfix;
+    position: relative;
+    margin-bottom: -$armeniagov-header-border-width;
+    padding-top: armeniagov-spacing(2);
+    border-bottom: $armeniagov-header-border-width solid $armeniagov-header-border-color;
+  }
+
+  .armeniagov-header__logotype {
+    display: inline-block;
+
+    // Add a gap after the logo in case it's followed by a product name. This
+    // gets removed later if the logotype is a :last-child.
+    margin-right: armeniagov-spacing(1);
+
+    // Prevent readability backplate from obscuring underline in Windows High
+    // Contrast Mode
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      color: linktext;
+    }
+
+    // Remove the gap after the logo if there's no product name to keep hover
+    // and focus states neat
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .armeniagov-header__logotype-crown {
+    position: relative;
+    top: -1px;
+    margin-right: 1px;
+    fill: currentcolor;
+    vertical-align: top;
+  }
+
+  .armeniagov-header__logotype-crown-fallback-image {
+    width: 36px;
+    height: 32px;
+    border: 0;
+    vertical-align: bottom;
+  }
+
+  .armeniagov-header__product-name {
+    @include armeniagov-font($size: 24, $line-height: 1);
+    display: inline-table;
+  }
+
+  .armeniagov-header__link {
+    // Avoid using the `armeniagov-link-common` mixin because the links in the header
+    // get a special treatment, because:
+    //
+    // - underlines are only visible on hover
+    // - all links get a 3px underline regardless of text size, as there are
+    //   multiple grouped elements close to one another and having slightly
+    //   different underline widths looks unbalanced
+    @include armeniagov-typography-common;
+    @include armeniagov-link-style-inverse;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: $armeniagov-header-link-underline-thickness;
+
+      @if $armeniagov-link-underline-offset {
+        text-underline-offset: $armeniagov-link-underline-offset;
+      }
+    }
+
+    &:focus {
+      @include armeniagov-focused-text;
+    }
+  }
+
+  .armeniagov-header__link--homepage {
+    // Font size needs to be set on the link so that the box sizing is correct
+    // in Firefox
+    @include armeniagov-font($size: false, $weight: bold);
+
+    display: inline-block;
+    margin-right: armeniagov-spacing(2);
+    font-size: 30px; // We don't have a mixin that produces 30px font size
+    line-height: 1;
+
+    @include armeniagov-media-query($from: tablet) {
+      display: inline;
+
+      &:focus {
+        // Replicate the focus box shadow but without the -2px y-offset of the first yellow shadow
+        // This is to stop the logo getting cut off by the box shadow when focused on above a product name
+        box-shadow: 0 0 $armeniagov-focus-colour;
+      }
+    }
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      // Negate the added border
+      margin-bottom: $armeniagov-header-link-underline-thickness * -1;
+      // Omitting colour will use default value of currentColor – if we
+      // specified currentColor explicitly IE8 would ignore this rule.
+      border-bottom: $armeniagov-header-link-underline-thickness solid;
+    }
+
+    // Remove any borders that show when focused and hovered.
+    &:focus {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  // The armeniagov-header__link--service-name class is deprecated - use
+  // armeniagov-header__service-name instead.
+  .armeniagov-header__service-name,
+  .armeniagov-header__link--service-name {
+    display: inline-block;
+    margin-bottom: armeniagov-spacing(2);
+    @include armeniagov-font($size: 24, $weight: bold);
+  }
+
+  .armeniagov-header__logo,
+  .armeniagov-header__content {
+    box-sizing: border-box;
+  }
+
+  .armeniagov-header__logo {
+    @include armeniagov-responsive-margin(2, "bottom");
+    padding-right: armeniagov-spacing(8);
+
+    @include armeniagov-media-query ($from: desktop) {
+      width: 33.33%;
+      padding-right: $armeniagov-gutter-half;
+      float: left;
+      vertical-align: top;
+    }
+  }
+
+  .armeniagov-header__content {
+    @include armeniagov-media-query ($from: desktop) {
+      width: 66.66%;
+      padding-left: $armeniagov-gutter-half;
+      float: left;
+    }
+  }
+
+  .armeniagov-header__menu-button {
+    @include armeniagov-font($size: 16);
+    display: none;
+    position: absolute;
+    top: armeniagov-spacing(4);
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: armeniagov-colour("white");
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: solid underline $armeniagov-header-link-underline-thickness;
+
+      @if $armeniagov-link-underline-offset {
+        text-underline-offset: $armeniagov-link-underline-offset;
+      }
+    }
+
+    &:focus {
+      @include armeniagov-focused-text;
+    }
+
+    &:after {
+      @include armeniagov-shape-arrow($direction: down, $base: 10px, $display: inline-block);
+      content: "";
+      margin-left: armeniagov-spacing(1);
+    }
+
+    @include armeniagov-media-query ($from: tablet) {
+      top: armeniagov-spacing(3);
+    }
+  }
+
+  .armeniagov-header__menu-button--open {
+    &:after {
+      @include armeniagov-shape-arrow($direction: up, $base: 10px, $display: inline-block);
+    }
+  }
+
+  .armeniagov-header__navigation {
+    @include armeniagov-media-query ($from: desktop) {
+      margin-bottom: armeniagov-spacing(2);
+    }
+  }
+
+  .armeniagov-header__navigation-list {
+    // Reset user-agent default list styles
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .armeniagov-header__menu-button {
+    display: block;
+
+    @include armeniagov-media-query ($from: desktop) {
+      display: none;
+    }
+  }
+
+  .armeniagov-header__navigation-list {
+    display: none;
+
+    @include armeniagov-media-query ($from: desktop) {
+      display: block;
+    }
+  }
+
+  .armeniagov-header__navigation-list--open {
+    display: block;
+  }
+
+  .armeniagov-header__navigation--end {
+    @include armeniagov-media-query ($from: desktop) {
+      margin: 0;
+      padding: armeniagov-spacing(1) 0;
+      text-align: right;
+    }
+  }
+
+  // The armeniagov-header__navigation--no-service-name class is deprecated and will
+  // be removed in the next major release.
+  .armeniagov-header__navigation--no-service-name {
+    padding-top: armeniagov-spacing(7);
+  }
+
+  .armeniagov-header__navigation-item {
+    padding: armeniagov-spacing(2) 0;
+    border-bottom: 1px solid $armeniagov-header-nav-item-border-color;
+
+    @include armeniagov-media-query ($from: desktop) {
+      display: inline-block;
+      margin-right: armeniagov-spacing(3);
+      padding: armeniagov-spacing(1) 0;
+      border: 0;
+    }
+
+    a {
+      @include armeniagov-font($size: 16, $weight: bold);
+      white-space: nowrap;
+    }
+  }
+
+  .armeniagov-header__navigation-item--active {
+    a {
+
+      &:link,
+      &:hover,
+      &:visited {
+        color: $armeniagov-header-link-active;
+      }
+
+      // When focussed, the text colour needs to be darker to ensure that colour
+      // contrast is still acceptable
+      &:focus {
+        color: $armeniagov-focus-text-colour;
+      }
+    }
+  }
+
+  .armeniagov-header__navigation-item:last-child {
+    margin-right: 0;
+    border-bottom: 0;
+  }
+
+  @include armeniagov-media-query($media-type: print) {
+    .armeniagov-header {
+      border-bottom-width: 0;
+      color: armeniagov-colour("black");
+      background: transparent;
+    }
+
+    // Hide the inverted crown when printing in browsers that don't support SVG.
+    .armeniagov-header__logotype-crown-fallback-image {
+      display: none;
+    }
+
+    .armeniagov-header__link {
+
+      &:link,
+      &:visited {
+        color: armeniagov-colour("black");
+      }
+
+      // Do not append link href to GOV.UK link when printing (e.g. '(/)')
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  @if $armeniagov-use-legacy-font {
+
+    // Begin adjustments for font baseline offset
+    // These should be removed when the font is updated with the correct baseline
+    .armeniagov-header__logotype-crown,
+    .armeniagov-header__logotype-crown-fallback-image {
+      position: relative;
+      top: -4px;
+      vertical-align: middle;
+    }
+
+    .armeniagov-header {
+      $offset: 3px;
+      padding-top: $offset;
+    }
+
+    .armeniagov-header__link--homepage {
+      line-height: 30px;
+    }
+
+    // End adjustments
+  }
+}

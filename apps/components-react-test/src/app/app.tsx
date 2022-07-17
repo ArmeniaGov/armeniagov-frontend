@@ -1,4 +1,5 @@
 import {
+  Header,
   Button,
   Select,
   Details,
@@ -19,6 +20,23 @@ import {
 export function App() {
   return (
     <div>
+      <Header
+        serviceName='Components'
+        navigation={[{
+          title: 'Link one',
+          href: '/one'
+        }, {
+          title: 'Link Two',
+          href: '/two',
+          active: true
+        }, {
+          title: 'Link Three',
+          href: '/three'
+        }]}
+      />
+
+      <br/><hr/><br/>
+      
       <Button>Hello Armenia!</Button>
 
       <br/><hr/><br/>
