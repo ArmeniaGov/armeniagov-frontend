@@ -1,0 +1,75 @@
+@import "../../styles/_base.scss";
+@import "../../styles/overrides/_width";
+
+@include armeniagov-exports("armeniagov/component/table") {
+    .armeniagov-table {
+      @include armeniagov-font($size: 19);
+      @include armeniagov-text-colour;
+      width: 100%;
+      @include armeniagov-responsive-margin(6, "bottom");
+  
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+  
+    .armeniagov-table__header {
+      @include armeniagov-typography-weight-bold;
+    }
+  
+    .armeniagov-table__header,
+    .armeniagov-table__cell {
+      padding: armeniagov-spacing(2) armeniagov-spacing(4) armeniagov-spacing(2) 0;
+      border-bottom: 1px solid $armeniagov-border-colour;
+      text-align: left;
+      vertical-align: top;
+      // GOV.UK Elements sets the font-size and line-height for all headers and cells
+      // in tables.
+      @include armeniagov-compatibility(armeniagov_elements) {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  
+    .armeniagov-table__cell--numeric {
+      @include armeniagov-font($size: false, $tabular: true);
+    }
+  
+    .armeniagov-table__header--numeric,
+    .armeniagov-table__cell--numeric {
+      text-align: right;
+    }
+  
+    .armeniagov-table__header:last-child,
+    .armeniagov-table__cell:last-child {
+      padding-right: 0;
+    }
+  
+    .armeniagov-table__caption {
+      @include armeniagov-typography-weight-bold;
+  
+      display: table-caption;
+      text-align: left;
+    }
+  
+    // Modifiers that make captions look more like their equivalent headings
+  
+    .armeniagov-table__caption--xl {
+      @include armeniagov-font($size: 48, $weight: bold);
+      margin-bottom: armeniagov-spacing(3);
+    }
+  
+    .armeniagov-table__caption--l {
+      @include armeniagov-font($size: 36, $weight: bold);
+      margin-bottom: armeniagov-spacing(3);
+    }
+  
+    .armeniagov-table__caption--m {
+      @include armeniagov-font($size: 24, $weight: bold);
+      margin-bottom: armeniagov-spacing(3);
+    }
+  
+    .armeniagov-table__caption--s {
+      @include armeniagov-font($size: 19, $weight: bold);
+    }
+  }
+  

@@ -1,7 +1,9 @@
 import {
   Button,
   Select,
-  Details
+  Details,
+  Table,
+  WidthOptions
 } from '@armeniagov/components-react';
 
 export function App() {
@@ -25,6 +27,15 @@ export function App() {
       >
         You have to be a resident of Armenia
       </Details>
+
+      <br/><hr/><br/>
+
+      <Table
+        caption='Dates and amounts'
+        captionSize='m'
+        headers={[{text: 'Date', size: WidthOptions['1/2']}, {text: 'Amounts'}]}
+        items={[['First 6 weeks', '£109.80 per week'], ['Next 33 weeks', '£109.80 per week'], ['Total estimated pay', '£4,282.20']]}
+      />
     </div>
   );
 }

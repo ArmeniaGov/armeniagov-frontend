@@ -20,8 +20,8 @@ export function Select(props: SelectProps) {
 
       <select className="armeniagov-select" id={props.id} name={props.id}>
         {
-          props.options.map(option => (
-            <option value={option.value}>{option.text}</option>
+          props.options.map((option, index) => (
+            <option value={option.value} key={index}>{option.text}</option>
           ))
         }
       </select>

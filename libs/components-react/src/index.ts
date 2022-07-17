@@ -1,3 +1,4 @@
+export * from './lib/table/table';
 export * from './lib/label/label';
 export * from './lib/hint/hint';
 export * from './lib/error-message/error-message';
