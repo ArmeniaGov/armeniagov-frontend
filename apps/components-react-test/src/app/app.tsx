@@ -8,6 +8,7 @@ import {
   BackLink,
   Accordion,
   Pagination,
+  SummaryList,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -79,6 +80,26 @@ export function App() {
         pageRadius={2}
         currentPage={5}
         onPageChange={_ => ({})}
+      />
+
+      <br/><hr/><br/>
+
+      <SummaryList
+        items={[{
+          title: 'Name',
+          content: 'Sarah Philips'
+        }, {
+          id: 'dob',
+          title: 'Date of birth',
+          content: '5 January 1978',
+          changeable: true
+        }, {
+          id: 'address',
+          title: 'Address',
+          content: <>72 Guild Street<br />London<br />SE23 6FH</>,
+          changeable: true,
+          changeText: 'Change Address'
+        }]}
       />
     </div>
   );

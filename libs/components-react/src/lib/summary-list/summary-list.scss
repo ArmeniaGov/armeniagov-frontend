@@ -1,0 +1,167 @@
+@import "../../styles/_base.scss";
+
+@include armeniagov-exports("armeniagov/component/summary-list") {
+    .armeniagov-summary-list {
+      @include armeniagov-font($size: 19);
+      @include armeniagov-text-colour;
+      @include armeniagov-media-query($from: tablet) {
+        display: table;
+        width: 100%;
+        table-layout: fixed; // Required to allow us to wrap words that overflow.
+        border-collapse: collapse;
+      }
+      margin: 0; // Reset default user agent styles
+      @include armeniagov-responsive-margin(6, "bottom");
+    }
+  
+    .armeniagov-summary-list__row {
+      border-bottom: 1px solid $armeniagov-border-colour;
+  
+      @include armeniagov-media-query($until: tablet) {
+        margin-bottom: armeniagov-spacing(3);
+      }
+      @include armeniagov-media-query($from: tablet) {
+        display: table-row;
+      }
+    }
+  
+    // Provide an empty 'cell' for rows that don't have actions – otherwise the
+    // bottom border is not drawn for that part of the row in some browsers.
+    .armeniagov-summary-list__row--no-actions {
+      @include armeniagov-media-query($from: tablet) {
+        &:after {
+          content: "";
+          display: table-cell;
+          width: 20%;
+        }
+      }
+    }
+  
+    .armeniagov-summary-list__key,
+    .armeniagov-summary-list__value,
+    .armeniagov-summary-list__actions {
+      margin: 0; // Reset default user agent styles
+  
+      @include armeniagov-media-query($from: tablet) {
+        display: table-cell;
+        padding-top: armeniagov-spacing(2);
+        padding-right: armeniagov-spacing(4);
+        padding-bottom: armeniagov-spacing(2);
+      }
+    }
+  
+    .armeniagov-summary-list__actions {
+      margin-bottom: armeniagov-spacing(3);
+      @include armeniagov-media-query($from: tablet) {
+        width: 20%;
+        padding-right: 0;
+        text-align: right;
+      }
+    }
+  
+    .armeniagov-summary-list__key,
+    .armeniagov-summary-list__value {
+      // Automatic wrapping for unbreakable text (e.g. URLs)
+      word-wrap: break-word; // Fallback for older browsers only
+      overflow-wrap: break-word;
+    }
+  
+    .armeniagov-summary-list__key {
+      margin-bottom: armeniagov-spacing(1);
+      @include armeniagov-typography-weight-bold;
+      @include armeniagov-media-query($from: tablet) {
+        width: 30%;
+      }
+    }
+  
+    .armeniagov-summary-list__value {
+      @include armeniagov-media-query($until: tablet) {
+        margin-bottom: armeniagov-spacing(3);
+      }
+    }
+  
+    .armeniagov-summary-list__value > p {
+      margin-bottom: armeniagov-spacing(2);
+    }
+  
+    .armeniagov-summary-list__value > :last-child {
+      margin-bottom: 0;
+    }
+  
+    .armeniagov-summary-list__actions-list {
+      width: 100%;
+      margin: 0; // Reset default user agent styles
+      padding: 0; // Reset default user agent styles
+    }
+  
+    .armeniagov-summary-list__actions-list-item {
+      display: inline-block;
+    }
+  
+    // In older browsers such as IE8, :last-child is not available,
+    // so only show the border divider where it is available.
+    @include armeniagov-media-query($until: tablet) {
+      .armeniagov-summary-list__actions-list-item {
+        margin-right: armeniagov-spacing(2);
+        padding-right: armeniagov-spacing(2);
+      }
+  
+      .armeniagov-summary-list__actions-list-item:not(:last-child) {
+        border-right: 1px solid $armeniagov-border-colour;
+      }
+  
+      .armeniagov-summary-list__actions-list-item:last-child {
+        margin-right: 0;
+        padding-right: 0;
+        border: 0;
+      }
+    }
+  
+    @include armeniagov-media-query($from: tablet) {
+      .armeniagov-summary-list__actions-list-item {
+        margin-left: armeniagov-spacing(2);
+        padding-left: armeniagov-spacing(2);
+      }
+  
+      .armeniagov-summary-list__actions-list-item:not(:first-child) {
+        border-left: 1px solid $armeniagov-border-colour;
+      }
+  
+      .armeniagov-summary-list__actions-list-item:first-child {
+        margin-left: 0;
+        padding-left: 0;
+        border: 0;
+      }
+    }
+  
+    // No border on entire summary list
+    .armeniagov-summary-list--no-border {
+      .armeniagov-summary-list__row {
+        border: 0;
+      }
+  
+      // Increase padding by 1px to compensate for 'missing' border
+      @include armeniagov-media-query($from: tablet) {
+        .armeniagov-summary-list__key,
+        .armeniagov-summary-list__value,
+        .armeniagov-summary-list__actions {
+          padding-bottom: armeniagov-spacing(2) + 1px;
+        }
+      }
+    }
+  
+    // No border on specific rows
+    .armeniagov-summary-list__row--no-border {
+      border: 0;
+  
+      // Increase padding by 1px to compensate for 'missing' border
+      @include armeniagov-media-query($from: tablet) {
+        .armeniagov-summary-list__key,
+        .armeniagov-summary-list__value,
+        .armeniagov-summary-list__actions {
+          padding-bottom: armeniagov-spacing(2) + 1px;
+        }
+      }
+    }
+  }
+  
