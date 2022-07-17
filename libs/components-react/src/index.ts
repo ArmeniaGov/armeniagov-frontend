@@ -1,3 +1,4 @@
+export * from './lib/accordion/accordion';
 export * from './lib/back-link/back-link';
 export * from './lib/notification-banner/notification-banner';
 export * from './lib/panel/panel';

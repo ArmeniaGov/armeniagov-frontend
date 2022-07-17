@@ -1,0 +1,375 @@
+@import "../../styles/_base.scss";
+@import "../../styles/core/typography";
+
+@include armeniagov-exports("armeniagov/component/accordion") {
+  $armeniagov-accordion-base-colour: armeniagov-colour("black");
+  $armeniagov-accordion-hover-colour: armeniagov-colour("light-grey", $legacy: "grey-3");
+  $armeniagov-accordion-icon-focus-colour: armeniagov-colour("yellow");
+  $armeniagov-accordion-bottom-border-width: 1px;
+
+  .armeniagov-accordion {
+    @include armeniagov-responsive-margin(6, "bottom");
+  }
+
+  .armeniagov-accordion__section {
+    padding-top: armeniagov-spacing(3);
+  }
+
+  .armeniagov-accordion__section-heading {
+    // Override browser defaults to ensure consistent element height
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-top: armeniagov-spacing(3);
+    padding-bottom: armeniagov-spacing(3);
+  }
+
+  .armeniagov-accordion__section-button {
+    @include armeniagov-font($size: 24, $weight: bold);
+    @include armeniagov-text-colour;
+
+    display: block;
+    margin-bottom: 0;
+    padding-top: armeniagov-spacing(3);
+  }
+
+  // Remove the bottom margin from the last item inside the content
+  .armeniagov-accordion__section-content> :last-child {
+    margin-bottom: 0;
+  }
+
+  .armeniagov-accordion {
+    // Border at the bottom of the whole accordion
+    border-bottom: $armeniagov-accordion-bottom-border-width solid $armeniagov-border-colour;
+  }
+
+  .armeniagov-accordion__section {
+    padding-top: 0;
+  }
+
+  // Hide the body of collapsed sections
+  .armeniagov-accordion__section-content {
+    display: none;
+    @include armeniagov-responsive-padding(8, "bottom");
+    @include armeniagov-responsive-padding(3, "top");
+  }
+
+  // Show the body of expanded sections
+  .armeniagov-accordion__section--expanded .armeniagov-accordion__section-content {
+    display: block;
+  }
+
+  .armeniagov-accordion__show-all {
+    @include armeniagov-font($size: 19);
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 9px;
+    padding: armeniagov-spacing(1) 2px armeniagov-spacing(1) 0;
+
+    border-width: 0;
+
+    color: $armeniagov-link-colour;
+    background: none;
+
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    @include armeniagov-media-query ($from: desktop) {
+      margin-bottom: 14px;
+    }
+
+    // Remove default button focus outline in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    &:hover {
+      color: $armeniagov-accordion-base-colour;
+      background: $armeniagov-accordion-hover-colour;
+      // The GOV.UK Design System focus state adds a box-shadow to the top and bottom of the
+      // button. We add a grey box-shadow on hover too, to make the height of the hover state
+      // match the height of the focus state.
+      box-shadow: 0 -2px $armeniagov-accordion-hover-colour, 0 4px $armeniagov-accordion-hover-colour;
+
+      .armeniagov-accordion__section-toggle-text {
+        color: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron {
+        color: $armeniagov-accordion-base-colour;
+        background: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron:after {
+        color: $armeniagov-accordion-hover-colour;
+      }
+    }
+
+    &:focus {
+      @include armeniagov-focused-text;
+
+      .armeniagov-accordion-nav__chevron {
+        background: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron:after {
+        color: $armeniagov-accordion-icon-focus-colour;
+      }
+    }
+  }
+
+  .armeniagov-accordion__section-heading {
+    padding: 0;
+  }
+
+  // Create Chevron icon aligned with text
+  .armeniagov-accordion-nav__chevron {
+    box-sizing: border-box;
+    display: inline-block;
+
+    position: relative;
+
+    // Set size using rems to make the icon scale with text if user resizes text in their browser
+    width: armeniagov-px-to-rem(20px);
+    height: armeniagov-px-to-rem(20px);
+
+    border: armeniagov-px-to-rem(1px) solid;
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    // IE8 fallback of icon
+    @include armeniagov-if-ie8 {
+      display: inline-block;
+      max-height: 20px;
+      line-height: 1;
+    }
+
+    // Create inner chevron arrow
+    &:after {
+      content: "";
+      box-sizing: border-box;
+      display: block;
+
+      position: absolute;
+      bottom: armeniagov-px-to-rem(5px);
+      left: armeniagov-px-to-rem(6px);
+
+      width: armeniagov-px-to-rem(6px);
+      height: armeniagov-px-to-rem(6px);
+
+      -webkit-transform: rotate(-45deg);
+
+      -ms-transform: rotate(-45deg);
+
+      transform: rotate(-45deg);
+
+      border-top: armeniagov-px-to-rem(2px) solid;
+      border-right: armeniagov-px-to-rem(2px) solid;
+
+      // IE8 fallback of icon with HTML symbol
+      @include armeniagov-if-ie8 {
+        content: "\25B2"; // "▲"
+        position: relative;
+        border: 0;
+      }
+    }
+  }
+
+  // Rotate icon to create "Down" version
+  .armeniagov-accordion-nav__chevron--down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    // IE8 fallback of arrow icon
+    @include armeniagov-if-ie8 {
+      &:after {
+        content: "\25BC"; // "▼"
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+      }
+    }
+  }
+
+  .armeniagov-accordion__section-button {
+    width: 100%;
+
+    padding: armeniagov-spacing(2) 0 0 0;
+
+    border: 0;
+
+    border-top: $armeniagov-accordion-bottom-border-width solid $armeniagov-border-colour;
+
+    // Visually separate the section from the one underneath when user changes colours in their
+    // browser. See https://github.com/alphagov/armeniagov-frontend/issues/2321#issuecomment-924201488
+    border-bottom: armeniagov-spacing(2) solid transparent;
+
+    color: $armeniagov-text-colour;
+    background: none;
+
+    text-align: left;
+    // Section headers have a pointer cursor as an additional affordance
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    @include armeniagov-media-query ($from: tablet) {
+      padding-bottom: armeniagov-spacing(2);
+    }
+
+    &:active {
+      color: $armeniagov-link-active-colour;
+      background: none;
+    }
+
+    &:hover {
+      color: $armeniagov-accordion-base-colour;
+      background: $armeniagov-accordion-hover-colour;
+
+      .armeniagov-accordion__section-toggle-text {
+        color: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron {
+        color: $armeniagov-accordion-base-colour;
+        background: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron:after {
+        color: $armeniagov-accordion-hover-colour;
+      }
+    }
+
+    &:focus {
+      // Remove default focus border around button as
+      // styling is being applied to inner text elements that receive focus
+      outline: 0;
+
+      .armeniagov-accordion__section-heading-text-focus,
+      .armeniagov-accordion__section-summary-focus,
+      .armeniagov-accordion__section-toggle-focus {
+        @include armeniagov-focused-text;
+      }
+
+      .armeniagov-accordion-nav__chevron {
+        color: $armeniagov-accordion-base-colour;
+        background: $armeniagov-accordion-base-colour;
+      }
+
+      .armeniagov-accordion-nav__chevron:after {
+        color: $armeniagov-accordion-icon-focus-colour;
+      }
+    }
+
+    // Remove default button focus outline in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  // Remove the transparent border when the section is expanded to make it clear that the heading
+  // relates to the content below. Adjust padding to maintain the height of the element.
+  // See https://github.com/alphagov/armeniagov-frontend/pull/2257#issuecomment-951920798
+  .armeniagov-accordion__section--expanded .armeniagov-accordion__section-button {
+    padding-bottom: armeniagov-spacing(4);
+    border-bottom: 0;
+  }
+
+  // As Chevron icon is vertically aligned it overlaps with the focus state bottom border
+  // Styling adds some spacing
+  .armeniagov-accordion__section-button:focus .armeniagov-accordion__section-toggle-focus {
+    padding-bottom: 3px;
+
+    @include armeniagov-media-query ($from: desktop) {
+      padding-bottom: 2px;
+    }
+  }
+
+  .armeniagov-accordion__section-toggle,
+  .armeniagov-accordion__section-heading-text,
+  .armeniagov-accordion__section-summary {
+    display: block;
+    margin-bottom: 13px;
+
+    .armeniagov-accordion__section-heading-text-focus,
+    .armeniagov-accordion__section-summary-focus,
+    .armeniagov-accordion__section-toggle-focus {
+      display: inline;
+    }
+  }
+
+  // Add toggle link with Chevron icon on left.
+  .armeniagov-accordion__section-toggle {
+    @include armeniagov-typography-responsive($size: 19);
+    @include armeniagov-typography-weight-regular;
+    color: $armeniagov-link-colour;
+  }
+
+  // Add space between the icon and text.
+  // Avoid applying spacing directly to the icon as the use of `transform` will change the
+  // placement of any margins.
+  .armeniagov-accordion__show-all-text,
+  .armeniagov-accordion__section-toggle-text {
+    margin-left: armeniagov-spacing(1);
+    vertical-align: middle;
+  }
+
+  // Background colour adjustment when user changes colours in Firefox
+  //
+  // When user changes colours in Firefox, text colour inside <button> is always black
+  // (regardless of the custom colours the user has set). This is fine when the text in the
+  // button is not nested inside another element because when user changes colours in Firefox,
+  // the immediate background colour of buttons is always white (again, regardless of user's
+  // custom colours).
+  //
+  // However, when the text inside <button> is wrapped inside another element AND that element
+  // sets a background colour, the text colour is still black but the background of that nested
+  // element gets the user's custom background colour. When the custom background is a lighter
+  // hue, the contrast might be sufficient. But if the user's custom background colour is a
+  // darker colour, the contrast with the text might not be sufficient.
+  //
+  // To ensure sufficient contrast, override the background colour set by the focus state on the
+  // nested elements to be transparent.
+  //
+  // Also override the background colour of the Show/Hide chevrons which set a background colour
+  // on hover.
+  @media screen and (forced-colors: active) {
+
+    .armeniagov-accordion__show-all:hover,
+    .armeniagov-accordion__section-button:hover {
+      .armeniagov-accordion-nav__chevron {
+        background-color: transparent;
+      }
+    }
+
+    .armeniagov-accordion__show-all:focus,
+    .armeniagov-accordion__section-button:focus {
+
+      .armeniagov-accordion__section-heading-text-focus,
+      .armeniagov-accordion__section-summary-focus,
+      .armeniagov-accordion__section-toggle-focus,
+      .armeniagov-accordion-nav__chevron {
+        background: transparent;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // For devices that can't hover such as touch devices,
+  // remove hover state as it can be stuck in that state (iOS).
+  @media (hover: none) {
+    .armeniagov-accordion__section-header:hover {
+      border-top-color: $armeniagov-border-colour;
+
+      box-shadow: inset 0 3px 0 0 $armeniagov-link-colour;
+
+      .armeniagov-accordion__section-button {
+        border-top-color: $armeniagov-border-colour;
+      }
+    }
+  }
+}

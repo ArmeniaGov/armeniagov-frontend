@@ -6,6 +6,7 @@ import {
   Panel,
   NotificationBanner,
   BackLink,
+  Accordion,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -58,6 +59,17 @@ export function App() {
       <BackLink href='#'>Go back</BackLink>
 
       <br/><hr/><br/>
+
+      <div style={{width: '60%', marginLeft: '5%', marginTop: '4em'}}>
+        <Accordion sections={[{
+          header: 'Writing well for the web',
+          content: <p className="armeniagov-body">This is the content for Writing well for the web.</p>
+        }, {
+          header: 'This finally works lol',
+          summary: 'After countless hours',
+          content: <p className="armeniagov-body">Hello pals</p>
+        }]}/>
+      </div>
     </div>
   );
 }
