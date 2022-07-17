@@ -1,3 +1,5 @@
+export * from './lib/tag/tag';
+export * from './lib/phase-banner/phase-banner';
 export * from './lib/tabs/tabs';
 export * from './lib/summary-list/summary-list';
 export * from './lib/pagination/pagination';

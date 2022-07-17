@@ -1,0 +1,84 @@
+@import "../../styles/_base.scss";
+
+@include armeniagov-exports("armeniagov/component/tag") {
+    .armeniagov-tag {
+  
+      display: inline-block;
+  
+      // When a user customises their colours often the background is removed,
+      // by adding a outline we ensure that the tag component still keeps it's meaning.
+      // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+      outline: 2px solid transparent;
+      outline-offset: -2px;
+  
+      color: armeniagov-colour("white");
+      background-color: armeniagov-colour("blue");
+      letter-spacing: 1px;
+  
+      text-decoration: none;
+      text-transform: uppercase;
+  
+      @if $armeniagov-use-legacy-font {
+        // Since New Transport sits slightly higher than other common fonts.
+        // We use intentionally uneven padding to make it balanced, this can be
+        // removed using the version of the font that has a more common vertical spacing.
+        @include armeniagov-font($size: 16, $weight: bold, $line-height: 1.25);
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-bottom: 1px;
+        padding-left: 8px;
+      } @else {
+        @include armeniagov-font($size: 16, $weight: bold, $line-height: 1);
+        padding-top: 5px;
+        padding-right: 8px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+      }
+    }
+  
+    .armeniagov-tag--grey {
+      color: armeniagov-shade(armeniagov-colour("dark-grey", $legacy: "grey-1"), 30);
+      background: armeniagov-tint(armeniagov-colour("dark-grey", $legacy: "grey-1"), 90);
+    }
+  
+    .armeniagov-tag--purple {
+      color: armeniagov-shade(armeniagov-colour("purple"), 20);
+      background: armeniagov-tint(armeniagov-colour("purple"), 80);
+    }
+  
+    .armeniagov-tag--turquoise {
+      color: armeniagov-shade(armeniagov-colour("turquoise"), 60);
+      background: armeniagov-tint(armeniagov-colour("turquoise"), 70);
+    }
+  
+    .armeniagov-tag--blue {
+      color: armeniagov-shade(armeniagov-colour("blue"), 30);
+      background: armeniagov-tint(armeniagov-colour("blue"), 80);
+    }
+  
+    .armeniagov-tag--yellow {
+      color: armeniagov-shade(armeniagov-colour("yellow"), 65);
+      background: armeniagov-tint(armeniagov-colour("yellow"), 75);
+    }
+  
+    .armeniagov-tag--orange {
+      color: armeniagov-shade(armeniagov-colour("orange"), 55);
+      background: armeniagov-tint(armeniagov-colour("orange"), 70);
+    }
+  
+    .armeniagov-tag--red {
+      color: armeniagov-shade(armeniagov-colour("red"), 30);
+      background: armeniagov-tint(armeniagov-colour("red"), 80);
+    }
+  
+    .armeniagov-tag--pink {
+      color: armeniagov-shade(armeniagov-colour("pink"), 40);
+      background: armeniagov-tint(armeniagov-colour("pink"), 80);
+    }
+  
+    .armeniagov-tag--green {
+      color: armeniagov-shade(armeniagov-colour("green"), 20);
+      background: armeniagov-tint(armeniagov-colour("green"), 80);
+    }
+  }
+  

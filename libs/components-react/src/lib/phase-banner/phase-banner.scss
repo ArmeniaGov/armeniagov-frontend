@@ -1,0 +1,28 @@
+@import "../../styles/_base.scss";
+@import "../tag/tag";
+
+@include armeniagov-exports("armeniagov/component/phase-banner") {
+  .armeniagov-phase-banner {
+    padding-top: armeniagov-spacing(2);
+    padding-bottom: armeniagov-spacing(2);
+
+    border-bottom: 1px solid $armeniagov-border-colour;
+  }
+
+  .armeniagov-phase-banner__content {
+    @include armeniagov-font($size: 16);
+    @include armeniagov-text-colour;
+
+    display: table;
+    margin: 0;
+  }
+
+  .armeniagov-phase-banner__content__tag {
+    margin-right: armeniagov-spacing(2);
+  }
+
+  .armeniagov-phase-banner__text {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

@@ -10,6 +10,8 @@ import {
   Pagination,
   SummaryList,
   Tabs,
+  PhaseBanner,
+  Tag,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -117,6 +119,21 @@ export function App() {
           content: <>Hello <b>Bros!</b></>
         }]}
       />
+
+      <br/><hr/><br/>
+
+      <PhaseBanner
+        phase={<>Alpha</>}
+        content={<>This component is in <b>Testing</b></>}
+      />
+
+      <br/><hr/><br/>
+
+      <Tag color='red'>Hello</Tag>
+      <Tag color='blue'>Dear</Tag>
+      <Tag color='orange'>Armenia</Tag>
+
+      <br/><hr/><br/>
     </div>
   );
 }
