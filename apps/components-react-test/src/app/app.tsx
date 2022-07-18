@@ -16,6 +16,7 @@ import {
   Tag,
   WarningText,
   Fieldset,
+  Checkboxes,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -194,6 +195,30 @@ export function App() {
           <input className="armeniagov-input" id="address-line-2" name="address-line-2" type="text" autoComplete="address-line2"/>
         </div>
       </Fieldset>
+
+      <br/><hr/><br/>
+
+      <Checkboxes
+        name='passport'
+        items={[{
+          title: 'Armenian',
+          hint: 'including Artsakh',
+          checked: true,
+          value: 'armenian'
+        }, {
+          title: 'Russian',
+          value: 'russian',
+          conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+        }, {
+          title: 'Citizen of another country',
+          value: 'other'
+        }, {
+          title: 'No citizenship',
+          value: 'none',
+          exclusive: true
+        }]}
+        onChange={console.log}
+      />
     </div>
   );
 }

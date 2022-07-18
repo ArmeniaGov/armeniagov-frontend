@@ -1,3 +1,5 @@
+export * from './lib/error-message/error-message';
+export * from './lib/checkboxes/checkboxes';
 export * from './lib/fieldset/fieldset';
 export * from './lib/breadcrumbs/breadcrumbs';
 export * from './lib/header/header';

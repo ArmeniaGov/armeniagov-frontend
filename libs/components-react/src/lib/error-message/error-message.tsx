@@ -1,13 +1,15 @@
 import './error-message.scss';
 
-/* eslint-disable-next-line */
-export interface ErrorMessageProps {}
+export interface ErrorMessageProps {
+  className?: string;
+  children: React.ReactNode;
+}
 
 export function ErrorMessage(props: ErrorMessageProps) {
   return (
-    <div>
-      <h1>Welcome to ErrorMessage!</h1>
-    </div>
+    <p className={`armeniagov-error-message ${props.className ? props.className : ''}`}>
+      { props.children }
+    </p>
   );
 }
 
