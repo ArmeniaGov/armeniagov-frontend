@@ -17,6 +17,7 @@ import {
   WarningText,
   Fieldset,
   Checkboxes,
+  InsetText,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -219,6 +220,10 @@ export function App() {
         }]}
         onChange={console.log}
       />
+
+      <br/><hr/><br/>
+
+      <InsetText>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</InsetText>
     </div>
   );
 }
