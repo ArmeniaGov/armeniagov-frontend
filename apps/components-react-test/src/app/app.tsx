@@ -15,6 +15,7 @@ import {
   PhaseBanner,
   Tag,
   WarningText,
+  Fieldset,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -173,6 +174,26 @@ export function App() {
       <br/><hr/><br/>
 
       <WarningText>You can be fined up to 5000 USD Dollars if you do not obey and SLAP BASS NOW</WarningText>
+
+      <br/><hr/><br/>
+
+      <Fieldset
+        legend='Question'
+      >
+        <div className="armeniagov-form-group">
+          <label className="armeniagov-label" htmlFor="address-line-1">
+            Address line 1
+          </label>
+          <input className="armeniagov-input" id="address-line-1" name="address-line-1" type="text" autoComplete="address-line1"/>
+        </div>
+
+        <div className="armeniagov-form-group">
+          <label className="armeniagov-label" htmlFor="address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input className="armeniagov-input" id="address-line-2" name="address-line-2" type="text" autoComplete="address-line2"/>
+        </div>
+      </Fieldset>
     </div>
   );
 }

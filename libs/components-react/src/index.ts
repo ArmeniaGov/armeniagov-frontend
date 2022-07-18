@@ -1,3 +1,4 @@
+export * from './lib/fieldset/fieldset';
 export * from './lib/breadcrumbs/breadcrumbs';
 export * from './lib/header/header';
 export * from './lib/warning-text/warning-text';
