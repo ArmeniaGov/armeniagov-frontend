@@ -1,3 +1,4 @@
+export * from './lib/error-summary/error-summary';
 export * from './lib/inset-text/inset-text';
 export * from './lib/error-message/error-message';
 export * from './lib/checkboxes/checkboxes';

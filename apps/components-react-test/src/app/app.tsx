@@ -18,6 +18,7 @@ import {
   Fieldset,
   Checkboxes,
   InsetText,
+  ErrorSummary,
   WidthOptions
 } from '@armeniagov/components-react';
 
@@ -224,6 +225,14 @@ export function App() {
       <br/><hr/><br/>
 
       <InsetText>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</InsetText>
+    
+      <ErrorSummary
+        title='There is a problem'
+        errors={[
+          <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
+          <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+        ]}
+      />
     </div>
   );
 }

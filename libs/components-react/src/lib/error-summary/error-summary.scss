@@ -1,0 +1,44 @@
+@import "../../styles/_base.scss";
+@import "../../styles/core/_lists.scss";
+
+@include armeniagov-exports("armeniagov/component/error-summary") {
+  .armeniagov-error-summary {
+    @include armeniagov-text-colour;
+    @include armeniagov-responsive-padding(4);
+    @include armeniagov-responsive-margin(8, "bottom");
+
+    border: $armeniagov-border-width solid $armeniagov-error-colour;
+
+    &:focus {
+      outline: $armeniagov-focus-width solid $armeniagov-focus-colour;
+    }
+  }
+
+  .armeniagov-error-summary__title {
+    @include armeniagov-font($size: 24, $weight: bold);
+
+    margin-top: 0;
+    @include armeniagov-responsive-margin(4, "bottom");
+  }
+
+  .armeniagov-error-summary__body {
+    @include armeniagov-font($size: 19);
+
+    p {
+      margin-top: 0;
+      @include armeniagov-responsive-margin(4, "bottom");
+    }
+  }
+
+  // Cross-component class - adjusts styling of list component
+  .armeniagov-error-summary__list {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .armeniagov-error-summary__list a {
+    @include armeniagov-typography-weight-bold;
+    @include armeniagov-link-common;
+    @include armeniagov-link-style-error;
+  }
+}
