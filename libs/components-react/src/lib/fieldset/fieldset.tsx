@@ -1,8 +1,9 @@
+import { SizeOptions } from '../../common/types';
 import './fieldset.scss';
 
 export interface FieldsetProps {
   legend: React.ReactNode;
-  legendSize?: 'xl' | 'l' | 'm' | 's';
+  legendSize?: SizeOptions;
   legendHeading?: boolean;
 
   className?: string;

@@ -1,3 +1,4 @@
+export * from './lib/text-input/text-input';
 export * from './lib/error-summary/error-summary';
 export * from './lib/inset-text/inset-text';
 export * from './lib/error-message/error-message';
@@ -22,3 +23,5 @@ export * from './lib/error-message/error-message';
 export * from './lib/select/select';
 export * from './lib/button/button';
 export * from './lib/details/details';
+
+export * from './common/types';

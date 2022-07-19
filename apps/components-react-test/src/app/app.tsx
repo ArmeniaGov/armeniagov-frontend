@@ -19,12 +19,15 @@ import {
   Checkboxes,
   InsetText,
   ErrorSummary,
-  WidthOptions
+  TextInput,
+  WidthOptions,
+  Label,
+  ErrorMessage
 } from '@armeniagov/components-react';
 
 export function App() {
   return (
-    <div>
+    <div style={{ marginBottom: '30vh' }}>
       <Header
         serviceName='Components'
         navigation={[{
@@ -226,12 +229,29 @@ export function App() {
 
       <InsetText>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</InsetText>
     
+      <br/><hr/><br/>
+
       <ErrorSummary
         title='There is a problem'
         errors={[
           <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
           <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
         ]}
+      />
+
+      <br/><hr/><br/>
+
+      <Label size='m'>What city do you live in?</Label>
+      <ErrorMessage>Enter a correct location</ErrorMessage>
+      <TextInput
+        name='location'
+        hint='In Armenia*'
+        relativeWidth={WidthOptions['1/2']}
+        prefix={<b>֏</b>}
+        suffix={<b>KG</b>}
+        value={'barlus'}
+        error={false}
+        onChange={console.log}
       />
     </div>
   );

@@ -74,34 +74,32 @@ export function Checkboxes(props: CheckboxesProps) {
     <div className={`armeniagov-checkboxes ${props.className ? props.className : ''} ${props.small ? 'armeniagov-checkboxes--small' : ''}`}>
       {
         props.items.map((item, index) => (
-          <>
-            <div className="armeniagov-checkboxes__item" key={index}>
-              <input
-                id={`${props.name}-${index + 1}`}
-                className="armeniagov-checkboxes__input"
-                name={props.name}
-                value={item.value}
-                checked={values[item.value]}
-                type="checkbox"
-                onChange={e => {
-                  if(item.exclusive) setExclusiveValue(item.value, !values[item.value]);
-                  else setValue(item.value, !values[item.value]);
-                }}
-              />
+          <div className="armeniagov-checkboxes__item" key={index}>
+            <input
+              id={`${props.name}-${index + 1}`}
+              className="armeniagov-checkboxes__input"
+              name={props.name}
+              value={item.value}
+              checked={values[item.value]}
+              type="checkbox"
+              onChange={e => {
+                if(item.exclusive) setExclusiveValue(item.value, !values[item.value]);
+                else setValue(item.value, !values[item.value]);
+              }}
+            />
 
-              <label className="armeniagov-label armeniagov-checkboxes__label" htmlFor={`${props.name}-${index + 1}`}>
-                { item.title }
-              </label>
+            <label className="armeniagov-label armeniagov-checkboxes__label" htmlFor={`${props.name}-${index + 1}`}>
+              { item.title }
+            </label>
 
-              {
-                item.hint ?
-                (
-                  <div className="armeniagov-hint armeniagov-checkboxes__hint">
-                    { item.hint }
-                  </div>
-                ) : ''
-              }
-            </div>
+            {
+              item.hint ?
+              (
+                <div className="armeniagov-hint armeniagov-checkboxes__hint">
+                  { item.hint }
+                </div>
+              ) : ''
+            }
 
             {
               values[item.value] && item.conditional ?
@@ -113,7 +111,7 @@ export function Checkboxes(props: CheckboxesProps) {
                 </div>
               ) : ''
             }
-          </>
+          </div>
         ))
       }
     </div>
