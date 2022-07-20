@@ -22,10 +22,14 @@ import {
   TextInput,
   WidthOptions,
   Label,
+  Textarea,
   ErrorMessage
 } from '@armeniagov/components-react';
+import { useState } from 'react';
 
 export function App() {
+  const [textareaError, setTextareaError] = useState(false);
+
   return (
     <div style={{ marginBottom: '30vh' }}>
       <Header
@@ -252,6 +256,21 @@ export function App() {
         value={'barlus'}
         error={false}
         onChange={console.log}
+      />
+
+      <br/><hr/><br/>
+
+      <Label size='l'>What is your favourite baseball team and why</Label>
+      <ErrorMessage>Not accurate enough</ErrorMessage>
+      <Textarea
+        name='baseball'
+        value='Yankees'
+        rows={5}
+        error={textareaError}
+        onChange={value => {
+          if(value.toLowerCase() !== 'yankees') setTextareaError(true);
+          else setTextareaError(false);
+        }}
       />
     </div>
   );
