@@ -23,6 +23,7 @@ import {
   WidthOptions,
   Label,
   Textarea,
+  Radios,
   ErrorMessage
 } from '@armeniagov/components-react';
 import { useState } from 'react';
@@ -271,6 +272,32 @@ export function App() {
           if(value.toLowerCase() !== 'yankees') setTextareaError(true);
           else setTextareaError(false);
         }}
+      />
+
+      <br/><hr/><br/>
+
+      <Radios
+        name='radios-test'
+        inline={false}
+        small={false}
+        items={[{
+          title: 'Bach',
+          value: 'bach',
+          hint: 'Choose him, he\'s the best :-)',
+          checked: true
+        }, {
+          title: 'Beethoven',
+          value: 'beethoven',
+          conditional: <p className="armeniagov-body">What's your favourite sonata?</p>
+        }, {
+          title: 'Strauss',
+          value: 'strauss'
+        }, {
+          title: 'Mozart',
+          value: 'mozart',
+          divider: <b>OR</b>
+        }]}
+        onChange={console.log}
       />
     </div>
   );

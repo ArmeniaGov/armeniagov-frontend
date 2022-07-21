@@ -1,3 +1,4 @@
+export * from './lib/radios/radios';
 export * from './lib/textarea/textarea';
 export * from './lib/text-input/text-input';
 export * from './lib/error-summary/error-summary';
