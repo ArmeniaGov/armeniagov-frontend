@@ -1,6 +1,5 @@
 import './button.scss';
 
-/* eslint-disable-next-line */
 export interface ButtonProps {
   start?: boolean;
   secondary?: boolean;

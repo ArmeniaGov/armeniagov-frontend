@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './header.scss';
 
-/* eslint-disable-next-line */
 export interface HeaderProps {
   serviceName: React.ReactNode;
   homeHref?: string;

@@ -1,6 +1,5 @@
 import './phase-banner.scss';
 
-/* eslint-disable-next-line */
 export interface PhaseBannerProps {
   phase: React.ReactNode;
   content: React.ReactNode;

@@ -1,6 +1,5 @@
 import './hint.scss';
 
-/* eslint-disable-next-line */
 export interface HintProps {
   children: React.ReactNode;
   className?: string;

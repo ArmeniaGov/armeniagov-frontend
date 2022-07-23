@@ -10,7 +10,6 @@ export interface RadiosItem {
   conditional?: React.ReactNode;
 }
 
-/* eslint-disable-next-line */
 export interface RadiosProps {
   name: string;
   items: RadiosItem[];
