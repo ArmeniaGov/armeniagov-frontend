@@ -1,3 +1,5 @@
+export * from './lib/form-group/form-group';
+export * from './lib/file-upload/file-upload';
 export * from './lib/radios/radios';
 export * from './lib/textarea/textarea';
 export * from './lib/text-input/text-input';

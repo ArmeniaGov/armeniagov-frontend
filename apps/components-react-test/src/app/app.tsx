@@ -24,7 +24,10 @@ import {
   Label,
   Textarea,
   Radios,
-  ErrorMessage
+  ErrorMessage,
+  FileUpload,
+  Hint,
+  FormGroup
 } from '@armeniagov/components-react';
 import { useState } from 'react';
 
@@ -299,6 +302,17 @@ export function App() {
         }]}
         onChange={console.log}
       />
+
+      <br/><hr/><br/>
+
+      <FormGroup>
+        <Label size='l'>Upload a file</Label>
+        <Hint>About rabis music</Hint>
+        <FileUpload
+          name='fille-gago'
+          onChange={console.log}
+        />
+      </FormGroup>
     </div>
   );
 }

@@ -1,12 +1,15 @@
 import './hint.scss';
 
 /* eslint-disable-next-line */
-export interface HintProps {}
+export interface HintProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
 export function Hint(props: HintProps) {
   return (
-    <div>
-      <h1>Welcome to Hint!</h1>
+    <div className={`armeniagov-hint ${props.className ? props.className : ''}`}>
+      { props.children }
     </div>
   );
 }
