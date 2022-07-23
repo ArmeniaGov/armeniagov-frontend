@@ -74,10 +74,10 @@ export function App() {
 
       <br/><hr/><br/>
 
+      <Label size="m" for="city">City</Label>
+      <Hint>In Armenia*</Hint>
       <Select
-        id='city'
-        title='City'
-        hint='In Armenia*'
+        name='city'
         options={[ {text: 'Yerevan', value: 'yerevan'}, {text: 'Gyumri', value: 'gyumri'}, {text: 'Kirovakan', value: 'vanadzor'} ]}
       />
 
