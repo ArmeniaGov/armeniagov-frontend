@@ -8,6 +8,7 @@ export interface HeaderProps {
   onNavigationChange?: (id: unknown) => unknown;
 
   className?: string;
+  children?: React.ReactNode;
 }
 
 export function Header(props: HeaderProps) {
@@ -62,6 +63,8 @@ export function Header(props: HeaderProps) {
           }
         </div>
       </div>
+
+      { props.children }
     </header>
   );
 }
