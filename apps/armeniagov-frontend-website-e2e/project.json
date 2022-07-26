@@ -1,0 +1,30 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/armeniagov-frontend-website-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/armeniagov-frontend-website-e2e/cypress.json",
+        "devServerTarget": "armeniagov-frontend-website:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "armeniagov-frontend-website:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/armeniagov-frontend-website-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["armeniagov-frontend-website"]
+}

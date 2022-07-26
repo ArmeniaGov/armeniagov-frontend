@@ -1,0 +1,85 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/armeniagov-frontend-website/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/armeniagov-frontend-website",
+        "index": "apps/armeniagov-frontend-website/src/index.html",
+        "baseHref": "/",
+        "main": "apps/armeniagov-frontend-website/src/main.tsx",
+        "polyfills": "apps/armeniagov-frontend-website/src/polyfills.ts",
+        "tsConfig": "apps/armeniagov-frontend-website/tsconfig.app.json",
+        "assets": [
+          "apps/armeniagov-frontend-website/src/favicon.ico",
+          "apps/armeniagov-frontend-website/src/assets"
+        ],
+        "styles": ["apps/armeniagov-frontend-website/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/armeniagov-frontend-website/src/environments/environment.ts",
+              "with": "apps/armeniagov-frontend-website/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "armeniagov-frontend-website:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "armeniagov-frontend-website:build:development"
+        },
+        "production": {
+          "buildTarget": "armeniagov-frontend-website:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/armeniagov-frontend-website/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/armeniagov-frontend-website"],
+      "options": {
+        "jestConfig": "apps/armeniagov-frontend-website/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

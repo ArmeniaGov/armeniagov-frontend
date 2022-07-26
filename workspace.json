@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "armeniagov-frontend-website": "apps/armeniagov-frontend-website",
+    "armeniagov-frontend-website-e2e": "apps/armeniagov-frontend-website-e2e",
     "components-react": "libs/components-react",
     "components-react-test": "apps/components-react-test",
     "components-react-test-e2e": "apps/components-react-test-e2e"
