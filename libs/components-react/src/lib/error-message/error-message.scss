@@ -3,13 +3,12 @@
 @include armeniagov-exports("armeniagov/component/error-message") {
     .armeniagov-error-message {
       @include armeniagov-font($size: 19, $weight: bold);
-  
+
       display: block;
       margin-top: 0; // Reset any default browser margins for paragraphs
       margin-bottom: armeniagov-spacing(3);
       clear: both;
-  
+
       color: $armeniagov-error-colour;
     }
   }
-  

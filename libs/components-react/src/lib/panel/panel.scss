@@ -3,19 +3,19 @@
 @include armeniagov-exports("armeniagov/component/panel") {
     .armeniagov-panel {
       @include armeniagov-font($size: 19);
-  
+
       box-sizing: border-box;
-  
+
       margin-bottom: armeniagov-spacing(3);
       padding: armeniagov-spacing(7) - $armeniagov-border-width;
-  
+
       border: $armeniagov-border-width solid transparent;
-  
+
       text-align: center;
-  
+
       @include armeniagov-media-query($until: tablet) {
         padding: armeniagov-spacing(3) - $armeniagov-border-width;
-  
+
         // This is an if-all-else-fails attempt to stop long words from overflowing the container
         // on very narrow viewports by forcing them to break and wrap instead. This
         // overflowing is more likely to happen when user increases text size on a mobile eg. using
@@ -29,31 +29,30 @@
         word-wrap: break-word; // Support IE (autoprefixer doesn't add this as it's not a prefix)
       }
     }
-  
+
     .armeniagov-panel--confirmation {
       color: armeniagov-colour("white");
       background: armeniagov-colour("green", $legacy: "turquoise");
-  
+
       @include armeniagov-media-query($media-type: print) {
         border-color: currentcolor;
         color: $armeniagov-print-text-colour;
         background: none;
       }
     }
-  
+
     .armeniagov-panel__title {
       margin-top: 0;
       margin-bottom: armeniagov-spacing(6);
-  
+
       @include armeniagov-font($size: 48, $weight: bold);
     }
-  
+
     .armeniagov-panel__title:last-child {
       margin-bottom: 0;
     }
-  
+
     .armeniagov-panel__body {
       @include armeniagov-font($size: 36);
     }
   }
-  

@@ -9,7 +9,7 @@
       border: 0;
       @include armeniagov-clearfix;
     }
-  
+
     // Fix for Firefox < 53
     // https://bugzilla.mozilla.org/show_bug.cgi?id=504622
     @supports not (caret-color: auto) {
@@ -18,11 +18,11 @@
         display: table-cell;
       }
     }
-  
+
     .armeniagov-fieldset__legend {
       @include armeniagov-font($size: 19);
       @include armeniagov-text-colour;
-  
+
       // Fix legend text wrapping in Edge and IE
       // 1. IE9-11 & Edge 12-13
       // 2. IE8-11
@@ -31,31 +31,31 @@
       max-width: 100%;        // 1
       margin-bottom: armeniagov-spacing(2);
       padding: 0;
-  
+
       white-space: normal;    // 1
     }
-  
+
     // Modifiers that make legends look more like their equivalent headings
-  
+
     .armeniagov-fieldset__legend--xl {
       @include armeniagov-font($size: 48, $weight: bold);
       margin-bottom: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-fieldset__legend--l {
       @include armeniagov-font($size: 36, $weight: bold);
       margin-bottom: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-fieldset__legend--m {
       @include armeniagov-font($size: 24, $weight: bold);
       margin-bottom: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-fieldset__legend--s {
       @include armeniagov-font($size: 19, $weight: bold);
     }
-  
+
     // When the legend contains an H1, we want the H1 to inherit all styles from
     // the legend. Effectively we want to be able to treat the heading as if it is
     // not there.
@@ -65,4 +65,3 @@
       font-weight: inherit;
     }
   }
-  

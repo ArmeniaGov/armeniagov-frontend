@@ -14,7 +14,7 @@
           align-items: center;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  
+
       @include armeniagov-media-query($from: tablet) {
         -ms-flex-direction: row;
             flex-direction: row;
@@ -22,13 +22,13 @@
             align-items: flex-start;
       }
     }
-  
+
     .armeniagov-pagination__list {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-  
+
     .armeniagov-pagination__item,
     .armeniagov-pagination__next,
     .armeniagov-pagination__prev {
@@ -39,30 +39,30 @@
       min-height: 45px;
       padding: armeniagov-spacing(2) armeniagov-spacing(3);
       float: left; // Float is ignored if flex is active for prev/next links
-  
+
       &:hover {
         background-color: armeniagov-colour("light-grey", $legacy: "grey-4");
       }
     }
-  
+
     .armeniagov-pagination__item {
       // Hide items on small screens except the prev/next items,
       // non-link items and the first and last items
       display: none;
-  
+
       // Center align pagination links in their parent list item so that they
       // visually sit in the middle of their touch area
       text-align: center;
-  
+
       @include armeniagov-media-query($from: tablet) {
         display: block;
       }
     }
-  
+
     .armeniagov-pagination__prev,
     .armeniagov-pagination__next {
       @include armeniagov-typography-weight-bold;
-  
+
       // Use flex to get around a whitespace issue between the arrow svg and the link text
       // without having to rely on whitespace control from backend tooling
       .armeniagov-pagination__link {
@@ -72,15 +72,15 @@
             align-items: center;
       }
     }
-  
+
     .armeniagov-pagination__prev {
       padding-left: 0;
     }
-  
+
     .armeniagov-pagination__next {
       padding-right: 0;
     }
-  
+
     // Only show first, last and non-link items on mobile
     .armeniagov-pagination__item--current,
     .armeniagov-pagination__item--ellipses,
@@ -88,40 +88,40 @@
     .armeniagov-pagination__item:last-child {
       display: block;
     }
-  
+
     .armeniagov-pagination__item--current {
       @include armeniagov-typography-weight-bold;
       outline: 1px solid transparent;
       background-color: $armeniagov-link-colour;
-  
+
       &:hover {
         background-color: $armeniagov-link-colour;
       }
-  
+
       .armeniagov-pagination__link {
         @include armeniagov-link-style-inverse;
-        
+
         &:focus {
             color: white;
         }
       }
     }
-  
+
     .armeniagov-pagination__item--ellipses {
       @include armeniagov-typography-weight-bold;
       color: $armeniagov-secondary-text-colour;
-  
+
       // Remove hover state for ellipsis items as they don't have links within them
       &:hover {
         background-color: transparent;
       }
     }
-  
+
     .armeniagov-pagination__link {
       display: block;
       min-width: armeniagov-spacing(3);
       color: $armeniagov-link-colour;
-  
+
       &:after {
         content: "";
         position: absolute;
@@ -130,7 +130,7 @@
         bottom: 0;
         left: 0;
       }
-  
+
       // Add link hover decoration to prev/next text if no label present on prev/next only mode
       // We do this so that we have a hover state in all possible instances
       &:hover,
@@ -138,35 +138,35 @@
         .armeniagov-pagination__link-title--decorated {
           @include armeniagov-link-decoration;
         }
-  
+
         .armeniagov-pagination__link-label,
         .armeniagov-pagination__link-title--decorated {
           @include armeniagov-link-hover-decoration;
         }
       }
-  
+
       &:focus {
         .armeniagov-pagination__icon {
           color: $armeniagov-focus-text-colour;
         }
-  
+
         .armeniagov-pagination__link-label {
           text-decoration: none;
         }
-  
+
         .armeniagov-pagination__link-title--decorated {
           text-decoration: none;
         }
       }
     }
-  
+
     .armeniagov-pagination__link-label {
       @include armeniagov-font($size: 19, $weight: "regular");
       @include armeniagov-link-decoration;
       display: inline-block;
       padding-left: armeniagov-spacing(6);
     }
-  
+
     .armeniagov-pagination__icon {
       // Set size using rems to make the icon scale with text if user resizes text in their browser
       width: armeniagov-px-to-rem(15px);
@@ -175,50 +175,50 @@
       fill: currentcolor;
       forced-color-adjust: auto;
     }
-  
+
     .armeniagov-pagination__icon--prev {
       margin-right: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-pagination__icon--next {
       margin-left: armeniagov-spacing(3);
     }
-  
+
     // Block mode - position previous and next links above and below numbers
     .armeniagov-pagination--block {
       display: block;
-  
+
       .armeniagov-pagination__item {
         padding: armeniagov-spacing(3);
         float: none;
       }
-  
+
       .armeniagov-pagination__next,
       .armeniagov-pagination__prev {
         padding-left: 0;
         float: none;
       }
-  
+
       .armeniagov-pagination__next {
         padding-right: armeniagov-spacing(3);
-  
+
         .armeniagov-pagination__icon {
           margin-left: 0;
         }
       }
-  
+
       // Only apply a border between prev and next if both are present
       .armeniagov-pagination__prev + .armeniagov-pagination__next {
         border-top: 1px solid $armeniagov-border-colour;
       }
-  
+
       // Reset both these elements to their inline default, both to ensure that the focus state
       // for block mode "shrink wraps" text as expected
       .armeniagov-pagination__link,
       .armeniagov-pagination__link-title {
         display: inline;
       }
-  
+
       // Set the after pseudo element to a block which makes the title visually display
       // as block level whilst programmatically being inline
       // We do this to get around an NVDA quirk where adjacent block level
@@ -227,10 +227,10 @@
         content: "";
         display: block;
       }
-  
+
       .armeniagov-pagination__link {
         text-align: left;
-  
+
         // &:focus {
         //   // apply focus styling to the label within the link as if it were being focused
         //   // to get around a display issue with a focusable inline element containing a mixture
@@ -239,15 +239,14 @@
         //     @include armeniagov-focused-text;
         //   }
         // }
-  
+
         &:not(:focus) {
           text-decoration: none;
         }
       }
-  
+
       .armeniagov-pagination__icon {
         margin-right: armeniagov-spacing(2);
       }
     }
   }
-  

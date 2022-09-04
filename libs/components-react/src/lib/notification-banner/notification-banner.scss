@@ -4,89 +4,88 @@
     .armeniagov-notification-banner {
       @include armeniagov-font($size: 19);
       @include armeniagov-responsive-margin(8, "bottom");
-  
+
       border: $armeniagov-border-width solid $armeniagov-brand-colour;
-  
+
       background-color: $armeniagov-brand-colour;
-  
+
       &:focus {
         outline: $armeniagov-focus-width solid $armeniagov-focus-colour;
       }
     }
-  
+
     .armeniagov-notification-banner__header {
       padding: 2px armeniagov-spacing(3) armeniagov-spacing(1);
-  
+
       // Ensures the notification header appears separate to the notification body text in high contrast mode
       border-bottom: 1px solid transparent;
-  
+
       @include armeniagov-media-query($from: tablet) {
         padding: 2px armeniagov-spacing(4) armeniagov-spacing(1);
       }
     }
-  
+
     .armeniagov-notification-banner__title {
       @include armeniagov-font($size: 19, $weight: bold);
-  
+
       margin: 0;
-  
+
       padding: 0;
-  
+
       color: armeniagov-colour("white");
     }
-  
+
     .armeniagov-notification-banner__content {
       $padding-tablet: armeniagov-spacing(4);
       @include armeniagov-text-colour;
       padding: armeniagov-spacing(3);
-  
+
       background-color: $armeniagov-body-background-colour;
-  
+
       @include armeniagov-media-query($from: tablet) {
         padding: $padding-tablet;
       }
-  
+
       // Wrap content at the same place that a 2/3 grid column ends, to maintain
       // shorter line-lengths when the notification banner is full width
       > * {
         // When elements have their own padding (like lists), include the padding
         // in the max-width calculation
         box-sizing: border-box;
-  
+
         // Calculate the internal width of a two-thirds column...
         $two-col-width: ($armeniagov-page-width * 2 / 3) - ($armeniagov-gutter * 1 / 3);
-  
+
         // ...and then factor in the left border and padding
         $banner-exterior: ($padding-tablet + $armeniagov-border-width);
         max-width: $two-col-width - $banner-exterior;
       }
-  
+
       > :last-child {
         margin-bottom: 0;
       }
     }
-  
+
     .armeniagov-notification-banner__heading {
       @include armeniagov-font($size: 24, $weight: bold);
-  
+
       margin: 0 0 armeniagov-spacing(3) 0;
-  
+
       padding: 0;
     }
-  
+
     .armeniagov-notification-banner__link {
       @include armeniagov-link-common;
       @include armeniagov-link-style-no-visited-state;
     }
-  
+
     .armeniagov-notification-banner--success {
       border-color: $armeniagov-success-colour;
-  
+
       background-color: $armeniagov-success-colour;
-  
+
       .armeniagov-notification-banner__link {
         @include armeniagov-link-style-success;
       }
     }
   }
-  

@@ -3,43 +3,42 @@
 @include armeniagov-exports("armeniagov/component/hint") {
     .armeniagov-hint {
       @include armeniagov-font($size: 19);
-  
+
       margin-bottom: armeniagov-spacing(3);
-  
+
       color: $armeniagov-secondary-text-colour;
     }
-  
+
     // Reduces margin-bottom of hint when used after the default label (no class)
     // or armeniagov-label--s for better vertical alignment.
-  
+
     // This adjustment will not work when the label is inside the <h1>, however it
     // is unlikely that the default or armeniagov-label--s class would be used in this
     // case.
-  
+
     // This adjustment will not work in browsers that do not support :not().
     // Users with these browsers will see the default size margin (5px larger).
-  
+
     .armeniagov-label:not(.armeniagov-label--m):not(.armeniagov-label--l):not(.armeniagov-label--xl) + .armeniagov-hint {
       margin-bottom: armeniagov-spacing(2);
     }
-  
+
     // Reduces margin-bottom of hint when used after the default legend (no class)
     // or armeniagov-fieldset__legend--s for better vertical alignment.
-  
+
     // This adjustment will not work when the legend is outside the <h1>, however
     // it is unlikely that the default or armeniagov-fieldset__legend--s class would be
     // used in this case.
-  
+
     // This adjustment will not work in browsers that do not support :not().
     // Users with these browsers will see the default size margin (5px larger).
-  
+
     .armeniagov-fieldset__legend:not(.armeniagov-fieldset__legend--m):not(.armeniagov-fieldset__legend--l):not(.armeniagov-fieldset__legend--xl) + .armeniagov-hint {
       margin-bottom: armeniagov-spacing(2);
     }
-  
+
     // Reduces visual spacing of legend when there is a hint
     .armeniagov-fieldset__legend + .armeniagov-hint {
       margin-top: armeniagov-spacing(-1);
     }
   }
-  

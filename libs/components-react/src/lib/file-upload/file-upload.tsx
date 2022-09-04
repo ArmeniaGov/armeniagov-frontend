@@ -14,7 +14,7 @@ export function FileUpload(props: FileUploadProps) {
     <input
       className="armeniagov-file-upload"
       id={props.name}
-      name={props.name} 
+      name={props.name}
       type="file"
       accept={props.accept}
       onChange={e => {

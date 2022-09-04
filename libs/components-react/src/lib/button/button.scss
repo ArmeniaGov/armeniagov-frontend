@@ -5,27 +5,27 @@
     $armeniagov-button-hover-colour: armeniagov-shade($armeniagov-button-colour, 20%);
     $armeniagov-button-shadow-colour: armeniagov-shade($armeniagov-button-colour, 60%);
     $armeniagov-button-text-colour: armeniagov-colour("white");
-  
+
     // Secondary button variables
     $armeniagov-secondary-button-colour: armeniagov-colour("light-grey", $legacy: "grey-3");
     $armeniagov-secondary-button-hover-colour: armeniagov-shade($armeniagov-secondary-button-colour, 10%);
     $armeniagov-secondary-button-shadow-colour: armeniagov-shade($armeniagov-secondary-button-colour, 40%);
     $armeniagov-secondary-button-text-colour: armeniagov-colour("black");
-  
+
     // Warning button variables
     $armeniagov-warning-button-colour: armeniagov-colour("red");
     $armeniagov-warning-button-hover-colour: armeniagov-shade($armeniagov-warning-button-colour, 20%);
     $armeniagov-warning-button-shadow-colour: armeniagov-shade($armeniagov-warning-button-colour, 60%);
     $armeniagov-warning-button-text-colour: armeniagov-colour("white");
-  
+
     // Because the shadow (s0) is visually 'part of' the button, we need to reduce
     // the height of the button to compensate by adjusting its padding (s1) and
     // increase the bottom margin to include it (s2).
     $button-shadow-size: $armeniagov-border-width-form-element;
-  
+
     .armeniagov-button {
       @include armeniagov-font($size: 19, $line-height: 19px);
-  
+
       box-sizing: border-box;
       display: inline-block;
       position: relative;
@@ -44,15 +44,15 @@
       vertical-align: top;
       cursor: pointer;
       -webkit-appearance: none;
-  
+
       @include armeniagov-if-ie8 {
         border-bottom: $button-shadow-size solid $armeniagov-button-shadow-colour;
       }
-  
+
       @include armeniagov-media-query($from: tablet) {
         width: auto;
       }
-  
+
       // Ensure that any global link styles are overridden
       &:link,
       &:visited,
@@ -61,26 +61,26 @@
         color: $armeniagov-button-text-colour;
         text-decoration: none;
       }
-  
+
       // Fix unwanted button padding in Firefox
       &::-moz-focus-inner {
         padding: 0;
         border: 0;
       }
-  
+
       &:hover {
         background-color: $armeniagov-button-hover-colour;
       }
-  
+
       &:active {
         // Bump the button down so it looks like its being pressed in
         top: $button-shadow-size;
-  
+
         @include armeniagov-if-ie8 {
           border-bottom-width: 0;
         }
       }
-  
+
       &:focus {
         border-color: $armeniagov-focus-colour;
         // When colours are overridden, for example when users have a dark mode,
@@ -97,7 +97,7 @@
         }
         box-shadow: inset 0 0 0 1px $armeniagov-focus-colour;
       }
-  
+
       // alphagov/armeniagov_template includes a specific a:link:focus selector
       // designed to make unvisited links a slightly darker blue when focussed, so
       // we need to override the text colour for that combination of selectors so
@@ -108,33 +108,33 @@
           color: $armeniagov-button-text-colour;
         }
       }
-  
+
       &:focus:not(:active):not(:hover) {
         border-color: $armeniagov-focus-colour;
         color: $armeniagov-focus-text-colour;
         background-color: $armeniagov-focus-colour;
         box-shadow: 0 2px 0 $armeniagov-focus-text-colour;
       }
-  
+
       // The following adjustments do not work for <input type="button"> as
       // non-container elements cannot include pseudo elements (i.e. ::before).
-  
+
       // Use a pseudo element to expand the click target area to include the
       // button's shadow as well, in case users try to click it.
       &:before {
         content: "";
         display: block;
-  
+
         position: absolute;
-  
+
         top: -$armeniagov-border-width-form-element;
         right: -$armeniagov-border-width-form-element;
         bottom: -($armeniagov-border-width-form-element + $button-shadow-size);
         left: -$armeniagov-border-width-form-element;
-  
+
         background: transparent;
       }
-  
+
       // When the button is active it is shifted down by $button-shadow-size to
       // denote a 'pressed' state. If the user happened to click at the very top
       // of the button, their mouse is no longer over the button (because it has
@@ -149,18 +149,18 @@
         top: -($armeniagov-border-width-form-element + $button-shadow-size);
       }
     }
-  
+
     .armeniagov-button--disabled,
     .armeniagov-button[disabled="disabled"],
     .armeniagov-button[disabled] {
       pointer-events: none;
       opacity: (.5);
-  
+
       &:hover {
         background-color: $armeniagov-button-colour;
         cursor: default;
       }
-  
+
       &:active {
         top: 0;
         box-shadow: 0 $button-shadow-size 0 $armeniagov-button-shadow-colour; // s0
@@ -169,11 +169,11 @@
         }
       }
     }
-  
+
     .armeniagov-button--secondary {
       background-color: $armeniagov-secondary-button-colour;
       box-shadow: 0 $button-shadow-size 0 $armeniagov-secondary-button-shadow-colour;
-  
+
       &,
       &:link,
       &:visited,
@@ -181,7 +181,7 @@
       &:hover {
         color: $armeniagov-secondary-button-text-colour;
       }
-  
+
       // alphagov/armeniagov_template includes a specific a:link:focus selector
       // designed to make unvisited links a slightly darker blue when focussed, so
       // we need to override the text colour for that combination of selectors so
@@ -192,20 +192,20 @@
           color: $armeniagov-secondary-button-text-colour;
         }
       }
-  
+
       &:hover {
         background-color: $armeniagov-secondary-button-hover-colour;
-  
+
         &[disabled] {
           background-color: $armeniagov-secondary-button-colour;
         }
       }
     }
-  
+
     .armeniagov-button--warning {
       background-color: $armeniagov-warning-button-colour;
       box-shadow: 0 $button-shadow-size 0 $armeniagov-warning-button-shadow-colour;
-  
+
       &,
       &:link,
       &:visited,
@@ -213,7 +213,7 @@
       &:hover {
         color: $armeniagov-warning-button-text-colour;
       }
-  
+
       // alphagov/armeniagov_template includes a specific a:link:focus selector
       // designed to make unvisited links a slightly darker blue when focussed, so
       // we need to override the text colour for that combination of selectors so
@@ -224,29 +224,29 @@
           color: $armeniagov-warning-button-text-colour;
         }
       }
-  
+
       &:hover {
         background-color: $armeniagov-warning-button-hover-colour;
-  
+
         &[disabled] {
           background-color: $armeniagov-warning-button-colour;
         }
       }
     }
-  
+
     .armeniagov-button--start {
       @include armeniagov-typography-weight-bold;
       @include armeniagov-typography-responsive($size: 24, $override-line-height: 1);
-  
+
       display: inline-flex;
       min-height: auto;
-  
+
       justify-content: center;
     }
-  
+
     .armeniagov-button__start-icon {
       margin-left: armeniagov-spacing(1);
-  
+
       @include armeniagov-media-query($from: desktop) {
         margin-left: armeniagov-spacing(2);
       }
@@ -257,19 +257,18 @@
       // (https://github.com/w3c/csswg-drafts/issues/6310)
       forced-color-adjust: auto;
     }
-  
+
     @if $armeniagov-use-legacy-font {
       // Begin adjustments for font baseline offset when using v1 of nta
       $offset: 2;
-  
+
       .armeniagov-button {
         padding-top: (armeniagov-spacing(2) - $armeniagov-border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
         padding-bottom: (armeniagov-spacing(2) - $armeniagov-border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
       }
-  
+
       .armeniagov-button__start-icon {
         margin-top: -3px;
       }
     }
   }
-  

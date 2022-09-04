@@ -4,33 +4,33 @@
     .armeniagov-label {
       @include armeniagov-font($size: 19);
       @include armeniagov-text-colour;
-  
+
       display: block;
-  
+
       margin-bottom: armeniagov-spacing(1);
     }
-  
+
     // Modifiers that make labels look more like their equivalent headings
-  
+
     .armeniagov-label--xl {
       @include armeniagov-font($size: 48, $weight: bold);
       margin-bottom: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-label--l {
       @include armeniagov-font($size: 36, $weight: bold);
       margin-bottom: armeniagov-spacing(3);
     }
-  
+
     .armeniagov-label--m {
       @include armeniagov-font($size: 24, $weight: bold);
       margin-bottom: armeniagov-spacing(2);
     }
-  
+
     .armeniagov-label--s {
       @include armeniagov-font($size: 19, $weight: bold);
     }
-  
+
     // When the label is nested inside a heading, override the heading so that it
     // does not have a margin. Effectively we want to be able to treat the heading
     // as if it is not there.
@@ -41,4 +41,3 @@
       margin: 0;
     }
   }
-  

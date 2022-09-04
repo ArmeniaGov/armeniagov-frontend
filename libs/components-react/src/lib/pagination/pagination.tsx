@@ -60,7 +60,7 @@ export function Pagination(props: PaginationProps) {
                   { 1 }
                 </a>
             </li>
-  
+
             <li className="armeniagov-pagination__item armeniagov-pagination__item--ellipses">⋯</li>
           </Fragment>
         ) : ''

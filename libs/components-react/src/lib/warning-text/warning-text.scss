@@ -6,57 +6,57 @@
       @include armeniagov-responsive-margin(6, "bottom");
       padding: armeniagov-spacing(2) 0;
     }
-  
+
     .armeniagov-warning-text__assistive {
       @include armeniagov-visually-hidden;
     }
-  
+
     .armeniagov-warning-text__icon {
       @include armeniagov-font($size: false, $weight: bold);
-  
+
       box-sizing: border-box;
-  
+
       display: inline-block;
-  
+
       position: absolute;
       left: 0;
-  
+
       min-width: 35px;
       min-height: 35px;
       margin-top: -7px;
-  
+
       @include armeniagov-media-query($from: tablet) {
         margin-top: -5px;
       }
-  
+
       // When a user customises their colours the background colour will often be removed.
       // Adding a border to the component keeps it's shape as a circle.
       border: 3px solid armeniagov-colour("black");
       border-radius: 50%;
-  
+
       color: armeniagov-colour("white");
       background: armeniagov-colour("black");
-  
+
       font-size: 30px;
       line-height: 29px;
-  
+
       text-align: center;
-  
+
       // Prevent the exclamation mark from being included when the warning text
       // is copied, for example.
       user-select: none;
-  
+
       // Improve rendering in Windows High Contrast Mode (Edge), where a
       // readability backplate behind the exclamation mark obscures the circle
       forced-color-adjust: none;
-  
+
       @media screen and (forced-colors: active) {
         border-color: windowText;
         color: windowText;
         background: transparent;
       }
     }
-  
+
     .armeniagov-warning-text__text {
       @include armeniagov-font($size: 19, $weight: bold);
       @include armeniagov-text-colour;
@@ -64,4 +64,3 @@
       padding-left: 45px;
     }
   }
-  

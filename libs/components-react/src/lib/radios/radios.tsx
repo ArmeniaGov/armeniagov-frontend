@@ -67,7 +67,7 @@ export function Radios(props: RadiosProps) {
               }
 
               {
-                item.value === currentValue && item.conditional ? 
+                item.value === currentValue && item.conditional ?
                 (
                   <div className="armeniagov-radios__conditional">
                     <div className="armeniagov-form-group">
