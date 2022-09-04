@@ -316,18 +316,38 @@ export function App() {
         />
       </FormGroup>
 
-      <FormGroup>
-        <Label size='m'>Upload a file</Label>
-        <TextInput
-          name='location'
-          fixedCharacterWidth='2'
-          error={false}
-          inputMode='numeric'
-          onChange={console.log}
-        />
-      </FormGroup>
-
-      <DateInput/>
+      <DateInput id="passport-input">
+        <FormGroup>
+          <Label size='s'>Day</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='2'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label size='s'>Day</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='2'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label size='s'>Day</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='3'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+      </DateInput>
 
       <Footer
         navigation={[
