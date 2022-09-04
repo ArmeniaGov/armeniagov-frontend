@@ -27,7 +27,9 @@ import {
   ErrorMessage,
   FileUpload,
   Hint,
-  FormGroup
+  FormGroup,
+  Footer,
+  DateInput
 } from '@armeniagov/components-react';
 import { useState } from 'react';
 
@@ -69,7 +71,7 @@ export function App() {
       />
 
       <br/><hr/><br/>
-      
+
       <Button>Hello Armenia!</Button>
 
       <br/><hr/><br/>
@@ -236,7 +238,7 @@ export function App() {
       <br/><hr/><br/>
 
       <InsetText>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</InsetText>
-    
+
       <br/><hr/><br/>
 
       <ErrorSummary
@@ -313,6 +315,89 @@ export function App() {
           onChange={console.log}
         />
       </FormGroup>
+
+      <FormGroup>
+        <Label size='m'>Upload a file</Label>
+        <TextInput
+          name='location'
+          fixedCharacterWidth='2'
+          error={false}
+          inputMode='numeric'
+          onChange={console.log}
+        />
+      </FormGroup>
+
+      <DateInput/>
+
+      <Footer
+        navigation={[
+          {
+            heading: 'hello',
+            width: 'two-thirds',
+            columns: 3,
+            links: [
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              },
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              }
+            ]
+          },
+          {
+            heading: 'hello',
+            width: 'one-third',
+            links: [
+              {
+                url: 'https://github.com/bach/rabis',
+                title: 'Github'
+              }
+            ]
+          }
+        ]}
+
+        links={[{
+          title: 'Github',
+          url: 'https://github.com/rabis-music',
+        }, {
+          title: 'Github',
+          url: 'https://github.com/rabis-music',
+        }]}
+      />
     </div>
   );
 }
