@@ -1,24 +1,22 @@
-import styles from './app.module.scss';
-import { Header } from '@armeniagov/components-react';
+import { Header, Accordion } from '@armeniagov/components-react';
+import { SubNavigation } from './components/sub-navigation/sub-navigation';
+import config from './common/config';
 
 export function App() {
   return (
     <>
-      <Header
-        serviceName='ArmeniaGov Design System'
-      >
-        <div className={styles['search']}>
-          SEARCH
-        </div>
-      </Header>
+      <Header serviceName='ArmeniaGov Design System'/>
 
-      <nav className={styles['nav']}>
-        <h3 className="armeniagov-heading-m">Tabs</h3>
-      </nav>
+      <SubNavigation navigation={config.subNaviagation}></SubNavigation>
 
-      <div>
-        <p className="armeniagov-body">Components</p>
-      </div>
+      <Accordion sections={[{
+          header: 'Writing well for the web',
+          content: <p className="armeniagov-body">This is the content for Writing well for the web.</p>
+        }, {
+          header: 'This finally works lol',
+          summary: 'After countless hours',
+          content: <p className="armeniagov-body">Hello pals</p>
+        }]}/>
     </>
   );
 }

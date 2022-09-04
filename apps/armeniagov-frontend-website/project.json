@@ -17,7 +17,12 @@
         "tsConfig": "apps/armeniagov-frontend-website/tsconfig.app.json",
         "assets": [
           "apps/armeniagov-frontend-website/src/favicon.ico",
-          "apps/armeniagov-frontend-website/src/assets"
+          "apps/armeniagov-frontend-website/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/components-react/src/styles/assets",
+            "output": "components-react/assets"
+          }
         ],
         "styles": ["apps/armeniagov-frontend-website/src/styles.scss"],
         "scripts": [],

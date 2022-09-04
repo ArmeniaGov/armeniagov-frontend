@@ -1,0 +1,42 @@
+.armeniagov-sub-navigation {
+    margin-left: 30px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 100px;
+    padding: 30px 15px 0 0;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    .armeniagov-sub-navigation-heading {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(50%) !important;
+        border: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .armeniagov-sub-navigation__section {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .armeniagov-sub-navigation__section-item {
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        a {
+            text-decoration: none;
+            color: #1d70b8;
+            padding: 2px 0;
+            font-family: "GDS Transport",arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}
