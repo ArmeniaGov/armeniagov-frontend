@@ -1,0 +1,23 @@
+@import "../../styles/all.scss";
+
+@include armeniagov-exports("armeniagov/component/date-input") {
+  .armeniagov-date-input {
+    @include armeniagov-clearfix;
+    // font-size: 0 removes whitespace caused by inline-block
+    font-size: 0;
+  }
+
+  .armeniagov-date-input__item {
+    display: inline-block;
+    margin-right: armeniagov-spacing(4);
+    margin-bottom: 0;
+  }
+
+  .armeniagov-date-input__label {
+    display: block;
+  }
+
+  .armeniagov-date-input__input {
+    margin-bottom: 0;
+  }
+}
