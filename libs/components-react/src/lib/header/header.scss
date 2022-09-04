@@ -11,6 +11,10 @@
   $armeniagov-header-nav-item-border-color: #2e3133;
   $armeniagov-header-link-underline-thickness: 3px;
 
+  // Based on the armeniagov-crest-2x.png image dimensions.
+  $armeniagov-header-coat-of-arms-image-width: 36px;
+  $armeniagov-header-coat-of-arms-image-height: 30px;
+
   .armeniagov-header {
     @include armeniagov-font($size: 16);
 
@@ -57,12 +61,20 @@
     }
   }
 
-  .armeniagov-header__logotype-crown {
-    position: relative;
-    top: -1px;
-    margin-right: 1px;
+  .armeniagov-header__logotype-coat-of-arms {
+    display: inline-block;
+    margin-right: 5px;
     fill: currentcolor;
     vertical-align: top;
+    min-width: $armeniagov-header-coat-of-arms-image-width;
+    min-height: $armeniagov-header-coat-of-arms-image-height;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: $armeniagov-header-coat-of-arms-image-width $armeniagov-header-coat-of-arms-image-height;
+    background-image: armeniagov-image-url("armeniagov-coat-of-arms-header.svg");
+    @include armeniagov-device-pixel-ratio {
+      background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");
+    }
   }
 
   .armeniagov-header__logotype-crown-fallback-image {
