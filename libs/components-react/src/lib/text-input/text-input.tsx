@@ -15,14 +15,15 @@ export interface TextInputProps {
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
 
-  hint: React.ReactNode;
+  hint?: React.ReactNode;
 
   className?: string;
+  autoComplete?: boolean;
 }
 
 export function TextInput(props: TextInputProps) {
   const widthClass = props.fixedCharacterWidth
-    ? `govuk-input--width-${props.fixedCharacterWidth}`
+    ? `armeniagov-input--width-${props.fixedCharacterWidth}`
     : (props.relativeWidth ? props.relativeWidth : '');
 
   return (
@@ -51,6 +52,7 @@ export function TextInput(props: TextInputProps) {
         pattern={props.inputMode === 'numeric' ? '[0-9]*' : undefined}
         inputMode={props.inputMode ? props.inputMode : undefined}
         type="text"
+        autoComplete={props.autoComplete ? 'no' : 'off'}
         onChange={e => {
           if(props.onChange) props.onChange(e.target.value);
         }}
