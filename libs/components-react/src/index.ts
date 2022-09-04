@@ -1,3 +1,5 @@
+export * from './lib/date-input/date-input';
+export * from './lib/footer/footer';
 export * from './lib/form-group/form-group';
 export * from './lib/file-upload/file-upload';
 export * from './lib/radios/radios';
