@@ -17,7 +17,12 @@
         "tsConfig": "apps/components-react-test/tsconfig.app.json",
         "assets": [
           "apps/components-react-test/src/favicon.ico",
-          "apps/components-react-test/src/assets"
+          "apps/components-react-test/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/components-react/src/styles/assets",
+            "output": "components-react/assets"
+          }
         ],
         "styles": ["apps/components-react-test/src/styles.scss"],
         "scripts": [],
