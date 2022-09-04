@@ -1,0 +1,192 @@
+@import "../../styles/all.scss";
+
+@include armeniagov-exports("armeniagov/component/footer") {
+    $armeniagov-footer-background: $armeniagov-canvas-background-colour;
+    $armeniagov-footer-border: $armeniagov-border-colour;
+    // This variable can be removed entirely once the legacy palette goes away,
+    // as it'll just be the same as $armeniagov-footer-border.
+    $armeniagov-footer-border-top: $armeniagov-border-colour;
+    $armeniagov-footer-text: $armeniagov-text-colour;
+    $armeniagov-footer-link-hover-colour: null; // Only used with the legacy palette
+
+    @if $armeniagov-use-legacy-palette {
+      $armeniagov-footer-border-top: #a1acb2;
+      $armeniagov-footer-border: armeniagov-colour("grey-2");
+      $armeniagov-footer-text: #454a4c;
+      $armeniagov-footer-link-hover-colour: #171819;
+    }
+
+    // Based on the armeniagov-crest-2x.png image dimensions.
+    $armeniagov-footer-crest-image-width-2x: 250px;
+    $armeniagov-footer-crest-image-height-2x: 204px;
+    // Half the 2x image so that it fits the regular 1x size.
+    $armeniagov-footer-crest-image-width: ($armeniagov-footer-crest-image-width-2x / 2);
+    $armeniagov-footer-crest-image-height: ($armeniagov-footer-crest-image-height-2x / 2);
+
+    .armeniagov-footer {
+      @include armeniagov-font($size: 16);
+      @include armeniagov-responsive-padding(7, "top");
+      @include armeniagov-responsive-padding(5, "bottom");
+
+      border-top: 1px solid $armeniagov-footer-border-top;
+      color: $armeniagov-footer-text;
+      background: $armeniagov-footer-background;
+    }
+
+    .armeniagov-footer__link {
+      @include armeniagov-link-common;
+
+      @if $armeniagov-use-legacy-palette {
+        &:link,
+        &:visited {
+          color: $armeniagov-footer-text;
+        }
+
+        &:hover,
+        &:active {
+          color: $armeniagov-footer-link-hover-colour;
+        }
+      } @else {
+        @include armeniagov-link-style-text;
+      }
+
+      // alphagov/armeniagov_template includes a specific a:link:focus selector
+      // designed to make unvisited links a slightly darker blue when focussed, so
+      // we need to override the text colour for that combination of selectors.
+      @include armeniagov-compatibility(armeniagov_template) {
+        &:link:focus {
+          @include armeniagov-text-colour;
+        }
+      }
+    }
+
+    .armeniagov-footer__section-break {
+      margin: 0; // Reset `<hr>` default margins
+      @include armeniagov-responsive-margin(8, "bottom");
+      border: 0; // Reset `<hr>` default borders
+      border-bottom: 1px solid $armeniagov-footer-border;
+    }
+
+    .armeniagov-footer__meta {
+      display: flex; // Support: Flexbox
+      margin-right: -$armeniagov-gutter-half;
+      margin-left: -$armeniagov-gutter-half;
+      flex-wrap: wrap; // Support: Flexbox
+      align-items: flex-end; // Support: Flexbox
+      justify-content: center; // Support: Flexbox
+    }
+
+    .armeniagov-footer__meta-item {
+      margin-right: $armeniagov-gutter-half;
+      margin-bottom: armeniagov-spacing(5);
+      margin-left: $armeniagov-gutter-half;
+    }
+
+    .armeniagov-footer__meta-item--grow {
+      flex: 1; // Support: Flexbox
+      @include armeniagov-media-query ($until: tablet) {
+        flex-basis: 320px; // Support: Flexbox
+      }
+    }
+
+    .armeniagov-footer__licence-logo {
+      display: inline-block;
+      margin-right: armeniagov-spacing(2);
+      @include armeniagov-media-query ($until: desktop) {
+        margin-bottom: armeniagov-spacing(3);
+      }
+      vertical-align: top;
+      // Work around SVGs not inheriting color from parent in forced color mode
+      // (https://github.com/w3c/csswg-drafts/issues/6310)
+      forced-color-adjust: auto;
+    }
+
+    .armeniagov-footer__licence-description {
+      display: inline-block;
+    }
+
+    .armeniagov-footer__copyright-logo {
+      display: inline-block;
+      min-width: $armeniagov-footer-crest-image-width;
+      padding-top: ($armeniagov-footer-crest-image-height + armeniagov-spacing(2));
+      background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");
+      @include armeniagov-device-pixel-ratio {
+        background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");
+      }
+      background-repeat: no-repeat;
+      background-position: 50% 0%;
+      background-size: $armeniagov-footer-crest-image-width $armeniagov-footer-crest-image-height;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .armeniagov-footer__inline-list {
+      margin-top: 0;
+      margin-bottom: armeniagov-spacing(3);
+      padding: 0;
+    }
+
+    .armeniagov-footer__meta-custom {
+      margin-bottom: armeniagov-spacing(4);
+    }
+
+    .armeniagov-footer__inline-list-item {
+      display: inline-block;
+      margin-right: armeniagov-spacing(3);
+      margin-bottom: armeniagov-spacing(1);
+    }
+
+    .armeniagov-footer__heading {
+      margin-bottom: armeniagov-spacing(6);
+      padding-bottom: armeniagov-spacing(4);
+
+      @include armeniagov-media-query ($until: tablet) {
+        padding-bottom: armeniagov-spacing(2);
+      }
+      border-bottom: 1px solid $armeniagov-footer-border;
+    }
+
+    .armeniagov-footer__navigation {
+      @include armeniagov-clearfix;
+      margin-right: -$armeniagov-gutter-half;
+      margin-left: -$armeniagov-gutter-half;
+    }
+
+    .armeniagov-footer__section {
+      display: inline-block;
+      margin-bottom: $armeniagov-gutter;
+      vertical-align: top;
+    }
+
+    .armeniagov-footer__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      column-gap: $armeniagov-gutter; // Support: Columns
+
+      // Disable thicker underlines on hover because of a bug in Chromium
+      // affecting links within columns
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=1190987
+      .armeniagov-footer__link:hover {
+        text-decoration-thickness: auto;
+      }
+    }
+
+    @include armeniagov-media-query ($from: desktop) {
+      .armeniagov-footer__list--columns-2 {
+        column-count: 2; // Support: Columns
+      }
+
+      .armeniagov-footer__list--columns-3 {
+        column-count: 3; // Support: Columns
+      }
+    }
+
+    .armeniagov-footer__list-item {
+      @include armeniagov-responsive-margin(4, "bottom");
+    }
+
+    .armeniagov-footer__list-item:last-child {
+      margin-bottom: 0;
+    }
+  }
