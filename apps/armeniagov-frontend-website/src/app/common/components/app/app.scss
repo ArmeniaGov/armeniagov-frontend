@@ -1,0 +1,25 @@
+.armeniagov-frontend-website {
+    &-app {
+        display: flex;
+        flex-wrap: nowrap;
+
+        margin-right: auto;
+        margin-left: auto;
+
+        max-width: 960px;
+        min-height: 0;
+
+        font-family: "GDS Transport",arial,sans-serif;
+
+        &-nav {
+            flex: 0 0 auto;
+        }
+
+        &-content {
+            padding: 30px;
+            padding-right: 0;
+            padding-bottom: 50px;
+            flex: 1 1 100%;
+        }
+    }
+}
