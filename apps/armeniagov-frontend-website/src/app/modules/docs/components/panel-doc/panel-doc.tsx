@@ -1,14 +1,34 @@
-import styles from './panel-doc.module.scss';
+import { Panel } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface PanelDocProps {}
+const code =
+`<Panel confirmation header='Դիմումն ավարտված է'>
+    Ձեր տեղեկանքի համարը<br/>
+    <strong>HDJ2123F</strong>
+</Panel>
+`;
 
-export function PanelDoc(props: PanelDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to PanelDoc!</h1>
-    </div>
-  );
+export function PanelDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <Panel confirmation header='Դիմումն ավարտված է'>
+                Ձեր տեղեկանքի համարը<br/>
+                <strong>HDJ2123F</strong>
+            </Panel>
+        </>
+    );
 }
 
 export default PanelDoc;

@@ -1,14 +1,70 @@
-import styles from './summary-list-doc.module.scss';
+import { SummaryList } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface SummaryListDocProps {}
+const code =
+`<SummaryList
+    items={[
+        {
+            title: 'Անուն',
+            content: ''
+        },
+        {
+            id: 'dob',
+            title: 'Ծննդյան ամսաթիվ',
+            content: '5 հունվարի 1978 թ',
+            changeable: true,
+            changeText: 'Խմբագրել'
+        },
+        {
+            id: 'address',
+            title: 'Հասցե',
+            content: <>ք. Երևան, 0010,<br/> Հանրապետության հրապարակ,<br/> Կառավարական տուն, 1</>,
+            changeable: true,
+            changeText: 'Փոխել հասցեն'
+        }
+    ]}
+/>
+`;
 
-export function SummaryListDoc(props: SummaryListDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to SummaryListDoc!</h1>
-    </div>
-  );
+export function SummaryListDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <SummaryList
+                items={[
+                    {
+                        title: 'Անուն',
+                        content: ''
+                    },
+                    {
+                        id: 'dob',
+                        title: 'Ծննդյան ամսաթիվ',
+                        content: '5 հունվարի 1978 թ',
+                        changeable: true,
+                        changeText: 'Խմբագրել'
+                    },
+                    {
+                        id: 'address',
+                        title: 'Հասցե',
+                        content: <>ք. Երևան, 0010,<br/> Հանրապետության հրապարակ,<br/> Կառավարական տուն, 1</>,
+                        changeable: true,
+                        changeText: 'Փոխել հասցեն'
+                    }
+                ]}
+            />
+        </>
+    );
 }
 
 export default SummaryListDoc;

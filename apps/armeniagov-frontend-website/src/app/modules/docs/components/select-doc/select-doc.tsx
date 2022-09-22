@@ -1,14 +1,42 @@
-import styles from './select-doc.module.scss';
+import { Select } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface SelectDocProps {}
+const code =
+`<Select
+    name='city'
+    options={[
+        {text: 'Երևան', value: 'yerevan'},
+        {text: 'Գյումրի', value: 'gyumri'},
+        {text: 'Վանաձոր', value: 'vanadzor'}
+    ]}
+/>
+`;
 
-export function SelectDoc(props: SelectDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to SelectDoc!</h1>
-    </div>
-  );
+export function SelectDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <Select
+                name='city'
+                options={[
+                    {text: 'Երևան', value: 'yerevan'},
+                    {text: 'Գյումրի', value: 'gyumri'},
+                    {text: 'Վանաձոր', value: 'vanadzor'}
+                ]}
+            />
+        </>
+    );
 }
 
 export default SelectDoc;

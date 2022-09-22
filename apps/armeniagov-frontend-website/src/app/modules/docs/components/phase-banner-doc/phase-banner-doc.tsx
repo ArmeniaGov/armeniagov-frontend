@@ -1,14 +1,34 @@
-import styles from './phase-banner-doc.module.scss';
+import { PhaseBanner } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface PhaseBannerDocProps {}
+const code =
+`<PhaseBanner
+    phase={<>Ալֆա</>}
+    content={<>Այս բաղադրիչը <b>փորձարկման փուլում է</b></>}
+/>
+`;
 
-export function PhaseBannerDoc(props: PhaseBannerDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to PhaseBannerDoc!</h1>
-    </div>
-  );
+export function PhaseBannerDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <PhaseBanner
+                phase={<>Ալֆա</>}
+                content={<>Այս բաղադրիչը <b>փորձարկման փուլում է</b></>}
+            />
+        </>
+    );
 }
 
 export default PhaseBannerDoc;

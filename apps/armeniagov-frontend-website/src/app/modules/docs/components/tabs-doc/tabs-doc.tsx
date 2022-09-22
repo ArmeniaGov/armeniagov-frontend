@@ -1,14 +1,50 @@
-import styles from './tabs-doc.module.scss';
+import { Tabs } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface TabsDocProps {}
+const code =
+`<Tabs
+    tabs={[{
+        title: 'Առաջին',
+        content: <>Բարեւ <b>Հայաստան</b></>
+    }, {
+        title: 'Երկրորդ',
+        content: <>Բարեւ <b>Երևան</b></>
+    }, {
+        title: 'Երրորդ',
+        content: <>Բարեւ <b>Արցախ</b></>
+    }]}
+/>
+`;
 
-export function TabsDoc(props: TabsDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to TabsDoc!</h1>
-    </div>
-  );
+export function TabsDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <Tabs
+                tabs={[{
+                    title: 'Առաջին',
+                    content: <>Բարեւ <b>Հայաստան</b></>
+                }, {
+                    title: 'Երկրորդ',
+                    content: <>Բարեւ <b>Երևան</b></>
+                }, {
+                    title: 'Երրորդ',
+                    content: <>Բարեւ <b>Արցախ</b></>
+                }]}
+            />
+        </>
+    );
 }
 
 export default TabsDoc;

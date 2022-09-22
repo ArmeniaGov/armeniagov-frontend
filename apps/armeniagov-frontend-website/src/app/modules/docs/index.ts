@@ -18,7 +18,6 @@ export * from './components/panel-doc/panel-doc';
 export * from './components/phase-banner-doc/phase-banner-doc';
 export * from './components/radios-doc/radios-doc';
 export * from './components/select-doc/select-doc';
-export * from './components/skip-link-doc/skip-link-doc';
 export * from './components/summary-list-doc/summary-list-doc';
 export * from './components/table-doc/table-doc';
 export * from './components/tabs-doc/tabs-doc';

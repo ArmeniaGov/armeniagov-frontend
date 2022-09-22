@@ -1,14 +1,32 @@
-import styles from './tag-doc.module.scss';
+import { Tag } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface TagDocProps {}
+const code =
+`<Tag color='red'>Բարեւ</Tag>
+<Tag color='blue'>Սիրելի</Tag>
+<Tag color='orange'>Հայաստան</Tag>
+`;
 
-export function TagDoc(props: TagDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to TagDoc!</h1>
-    </div>
-  );
+export function TagDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <Tag color='red'>Բարեւ</Tag>
+            <Tag color='blue'>Սիրելի</Tag>
+            <Tag color='orange'>Հայաստան</Tag>
+        </>
+    );
 }
 
 export default TagDoc;

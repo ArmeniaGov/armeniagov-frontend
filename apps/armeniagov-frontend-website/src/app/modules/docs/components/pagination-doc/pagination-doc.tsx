@@ -1,14 +1,38 @@
-import styles from './pagination-doc.module.scss';
+import { Pagination } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface PaginationDocProps {}
+const code =
+`<Pagination
+    pageCount={10}
+    pageRadius={2}
+    currentPage={5}
+    onPageChange={_ => ({})}
+/>
+`;
 
-export function PaginationDoc(props: PaginationDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to PaginationDoc!</h1>
-    </div>
-  );
+export function PaginationDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <Pagination
+                pageCount={10}
+                pageRadius={2}
+                currentPage={5}
+                onPageChange={_ => ({})}
+            />
+        </>
+    );
 }
 
 export default PaginationDoc;

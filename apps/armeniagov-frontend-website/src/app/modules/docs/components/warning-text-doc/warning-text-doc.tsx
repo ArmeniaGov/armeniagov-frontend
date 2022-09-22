@@ -1,14 +1,28 @@
-import styles from './warning-text-doc.module.scss';
+import { WarningText } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface WarningTextDocProps {}
+const code =
+`<WarningText>Չգրանցվելու դեպքում կարող եք տուգանվել մինչև 5,000 դրամով:</WarningText>
+`;
 
-export function WarningTextDoc(props: WarningTextDocProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to WarningTextDoc!</h1>
-    </div>
-  );
+export function WarningTextDoc() {
+    return (
+        <>
+            <CopyBlock
+                text={code}
+                theme={atomOneDark}
+                startingLineNumber={1}
+                language="jsx"
+                showLineNumbers
+                codeBlock
+                wrapLines
+            />
+
+            <hr/>
+
+            <WarningText>Չգրանցվելու դեպքում կարող եք տուգանվել մինչև 5,000 դրամով:</WarningText>
+        </>
+    );
 }
 
 export default WarningTextDoc;
