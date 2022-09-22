@@ -9,7 +9,7 @@ import { SubNavigation } from '../../common/components';
 export function Components() {
   return (
     <>
-      <Header serviceName='ArmeniaGov Components'/>
+      <Header serviceName='Թվայնացման ուղեցույց - Բաղադրիչները'/>
 
       <App>
         <AppNav>
