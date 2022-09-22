@@ -19,7 +19,6 @@ import {
     PhaseBannerDoc,
     RadiosDoc,
     SelectDoc,
-    SkipLinkDoc,
     SummaryListDoc,
     TableDoc,
     TabsDoc,
@@ -130,11 +129,6 @@ export default {
             "title": "Select",
             "element": <SelectDoc/>,
             "path": "/components/select"
-        },
-        {
-            "title": "Skip link",
-            "element": <SkipLinkDoc/>,
-            "path": "/components/skip-link"
         },
         {
             "title": "Summary list",
