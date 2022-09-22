@@ -17,6 +17,7 @@
         "tsConfig": "apps/armeniagov-frontend-website/tsconfig.app.json",
         "assets": [
           "apps/armeniagov-frontend-website/src/favicon.ico",
+          "apps/armeniagov-frontend-website/src/_redirects",
           "apps/armeniagov-frontend-website/src/assets",
           {
             "glob": "**/*",
