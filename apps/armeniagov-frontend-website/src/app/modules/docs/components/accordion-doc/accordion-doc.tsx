@@ -8,18 +8,18 @@ const code =
 `<Accordion sections={
     [
         {
-            header: 'Writing well for the web',
-            content: <p className="armeniagov-body">This is the content for Writing well for the web.</p>
+            header: 'Վեբ ռեսուրսների խմբագրում',
+            content: <p className="armeniagov-body">Պարունակություն</p>
         },
         {
-            header: 'Assembling the tech team',
-            summary: 'After understandning the requirements',
-            content: <p className="armeniagov-body">This is the content for Assembling the tech team</p>
+            header: 'Թիմի ստեղծում',
+            summary: 'Կարճ բնութագրություն',
+            content: <p className="armeniagov-body">Պարունակություն</p>
         },
         {
-            header: 'Understanding the requirements',
-            summary: 'Valuing the users\\' opinion',
-            content: <p className="armeniagov-body">This is the content for Understanding the requirements</p>
+            header: 'Օգտատերերի պահանջներ',
+            summary: 'Կարճ բնութագրություն',
+            content: <p className="armeniagov-body">Պարունակություն</p>
         }
     ]
 }/>`;
@@ -44,18 +44,18 @@ export function AccordionDoc() {
       <Accordion sections={
         [
           {
-            header: 'Writing well for the web',
-            content: <p className="armeniagov-body">This is the content for Writing well for the web.</p>
+            header: 'Վեբ ռեսուրսների խմբագրում',
+            content: <p className="armeniagov-body">Պարունակություն</p>
           },
           {
-            header: 'Assembling the tech team',
-            summary: 'After understandning the requirements',
-            content: <p className="armeniagov-body">This is the content for Assembling the tech team</p>
+            header: 'Թիմի ստեղծում',
+            summary: 'Կարճ բնութագրություն',
+            content: <p className="armeniagov-body">Պարունակություն</p>
           },
           {
-            header: 'Understanding the requirements',
-            summary: 'Valuing the users\' opinion',
-            content: <p className="armeniagov-body">This is the content for Understanding the requirements</p>
+            header: 'Օգտատերերի պահանջներ',
+            summary: 'Կարճ բնութագրություն',
+            content: <p className="armeniagov-body">Պարունակություն</p>
           }
         ]
       }/>

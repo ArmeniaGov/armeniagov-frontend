@@ -2,7 +2,7 @@ import { ErrorMessage } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
-`<ErrorMessage>Enter a correct location</ErrorMessage>`;
+`<ErrorMessage>Մուտքագրեք ճիշտ տվյալներ</ErrorMessage>`;
 
 export function ErrorMessageDoc() {
   return (
@@ -19,7 +19,7 @@ export function ErrorMessageDoc() {
 
       <hr/>
 
-      <ErrorMessage>Enter a correct location</ErrorMessage>
+      <ErrorMessage>Մուտքագրեք ճիշտ տվյալներ</ErrorMessage>
     </>
   );
 }

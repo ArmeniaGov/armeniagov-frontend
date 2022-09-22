@@ -5,20 +5,20 @@ const code =
 `<Checkboxes
   name='passport'
   items={[{
-    title: 'Armenian',
-    hint: 'including Artsakh',
+    title: 'Հայկական',
+    hint: 'նաև Արցախի',
     checked: true,
     value: 'armenian'
   }, {
-    title: 'Russian',
+    title: 'Ռուսական',
     value: 'russian',
-    conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+    conditional: <p className="armeniagov-body">Դուք Հայաստանի ռեզիդենտ ե՞ք</p>
   }, {
-    title: 'Citizen of another country',
+    title: 'Այկ երկրի',
     value: 'other',
-    conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+    conditional: <p className="armeniagov-body">Դուք Հայաստանի ռեզիդենտ ե՞ք</p>
   }, {
-    title: 'No citizenship',
+    title: 'Առանց քաղաքացիություն',
     value: 'none',
     exclusive: true
   }]}
@@ -43,20 +43,20 @@ export function CheckboxesDoc() {
       <Checkboxes
         name='passport'
         items={[{
-          title: 'Armenian',
-          hint: 'including Artsakh',
+          title: 'Հայկական',
+          hint: 'նաև Արցախի',
           checked: true,
           value: 'armenian'
         }, {
-          title: 'Russian',
+          title: 'Ռուսական',
           value: 'russian',
-          conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+          conditional: <p className="armeniagov-body">Դուք Հայաստանի ռեզիդենտ ե՞ք</p>
         }, {
-          title: 'Citizen of another country',
+          title: 'Այկ երկրի',
           value: 'other',
-          conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+          conditional: <p className="armeniagov-body">Դուք Հայաստանի ռեզիդենտ ե՞ք</p>
         }, {
-          title: 'No citizenship',
+          title: 'Առանց քաղաքացիություն',
           value: 'none',
           exclusive: true
         }]}

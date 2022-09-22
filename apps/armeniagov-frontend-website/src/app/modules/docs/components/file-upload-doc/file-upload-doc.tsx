@@ -3,10 +3,10 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
 `<FormGroup>
-  <Label size="l">Upload a file</Label>
-  <Hint>About rabis music</Hint>
+  <Label size="l">Վերբեռնեք ձեր նկարրը</Label>
+  <Hint>Ձեր երեսը պետք է երեվա, մի կրեք ակնոցներ</Hint>
   <FileUpload
-    name="fille-gago"
+    name="face"
     accept=".jpg,.png"
     onChange={console.log}
   />
@@ -28,10 +28,10 @@ export function FileUploadDoc() {
       <hr/>
 
       <FormGroup>
-        <Label size="l">Upload a file</Label>
-        <Hint>About rabis music</Hint>
+        <Label size="l">Վերբեռնեք ձեր նկարրը</Label>
+        <Hint>Ձեր երեսը պետք է երեվա, մի կրեք ակնոցներ</Hint>
         <FileUpload
-          name="fille-gago"
+          name="face"
           accept=".jpg,.png"
           onChange={console.log}
         />

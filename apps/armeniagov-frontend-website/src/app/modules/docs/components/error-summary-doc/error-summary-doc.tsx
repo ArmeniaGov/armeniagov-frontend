@@ -3,10 +3,10 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
 `<ErrorSummary
-  title='There is a problem'
+  title='Կա խնդիր'
   errors={[
-    <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
-    <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+    <a href="#passport-issued-day">Անձնագրի ժամկետը լրացել է</a>,
+    <a href="#postcode-input">Մուտքագրեք ձեր փոստային կոդը</a>
   ]}
 />`;
 
@@ -26,10 +26,10 @@ export function ErrorSummaryDoc() {
       <hr/>
 
       <ErrorSummary
-        title='There is a problem'
+        title='Կա խնդիր'
         errors={[
-          <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
-          <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+          <a href="#passport-issued-day">Անձնագրի ժամկետը լրացել է</a>,
+          <a href="#postcode-input">Մուտքագրեք ձեր փոստային կոդը</a>
         ]}
       />
     </>

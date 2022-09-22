@@ -5,70 +5,70 @@ const code =
 `<Footer
   navigation={[
     {
-      heading: 'hello',
+      heading: 'Երկու երորդ',
       width: 'two-thirds',
       columns: 3,
       links: [
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         },
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         }
       ]
     },
     {
-      heading: 'hello',
+      heading: 'Մեկ երորդ',
       width: 'one-third',
       links: [
         {
-          url: 'https://github.com/bach/rabis',
-          title: 'Github'
+          url: '/',
+          title: 'Հղում'
         }
       ]
     }
   ]}
 
   links={[{
-    title: 'Github',
-    url: 'https://github.com/rabis-music',
+    title: 'Հղում',
+    url: 'https://Հղում.com/rabis-music',
   }, {
-    title: 'Github',
-    url: 'https://github.com/rabis-music',
+    title: 'Հղում',
+    url: 'https://Հղում.com/rabis-music',
   }]}
 />`;
 
@@ -90,70 +90,70 @@ export function FooterDoc() {
       <Footer
         navigation={[
           {
-            heading: 'hello',
+            heading: 'Երկու երորդ',
             width: 'two-thirds',
             columns: 3,
             links: [
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               },
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               }
             ]
           },
           {
-            heading: 'hello',
+            heading: 'Մեկ երորդ',
             width: 'one-third',
             links: [
               {
-                url: 'https://github.com/bach/rabis',
-                title: 'Github'
+                url: '/',
+                title: 'Հղում'
               }
             ]
           }
         ]}
 
         links={[{
-          title: 'Github',
-          url: 'https://github.com/rabis-music',
+          title: 'Հղում',
+          url: '/',
         }, {
-          title: 'Github',
-          url: 'https://github.com/rabis-music',
+          title: 'Հղում',
+          url: '/',
         }]}
       />
     </>

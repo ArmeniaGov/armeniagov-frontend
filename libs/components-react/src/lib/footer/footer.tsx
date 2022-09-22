@@ -100,7 +100,7 @@ export function Footer(props: FooterProps) {
           </div>
 
           <div className="armeniagov-footer__meta-item">
-            <a className="armeniagov-footer__link armeniagov-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+            <a className="armeniagov-footer__link armeniagov-footer__copyright-logo" href="https://hti.am/">© ՀՀ ԲՏԱ Նախարարություն</a>
           </div>
         </div>
       </div>

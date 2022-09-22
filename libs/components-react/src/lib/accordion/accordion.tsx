@@ -38,13 +38,13 @@ export function Accordion(props: AccordionProps) {
             ? (
               <button type="button" className="armeniagov-accordion__show-all" aria-expanded="true">
                 <span className="armeniagov-accordion-nav__chevron"></span>
-                <span className="armeniagov-accordion__show-all-text">Hide all sections</span>
+                <span className="armeniagov-accordion__show-all-text">Թաքցնել ամենը</span>
               </button>
             )
             : (
               <button type="button" className="armeniagov-accordion__show-all" aria-expanded="false">
                 <span className="armeniagov-accordion-nav__chevron armeniagov-accordion-nav__chevron--down"></span>
-                <span className="armeniagov-accordion__show-all-text">Show all sections</span>
+                <span className="armeniagov-accordion__show-all-text">Ցույց տալ ամենը</span>
               </button>
             )
         }
@@ -85,7 +85,7 @@ export function Accordion(props: AccordionProps) {
                           className={`armeniagov-accordion-nav__chevron ${open ? '' : 'armeniagov-accordion-nav__chevron--down'}`}
                         ></span>
                         <span className="armeniagov-accordion__section-toggle-text">
-                          {open ? 'Hide' : 'Show'}
+                          {open ? 'Թաքցնել' : 'Ցույց տալ'}
                         </span>
                       </span>
                     </span>

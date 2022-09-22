@@ -3,13 +3,13 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
 `<Fieldset
-  legend="Question"
+  legend="Հարցում"
   legendSize="l" // 's' | 'm' | 'l' | 'xl', default: 'l'
   legendHeading // use if this is the only fieldset on the page
 >
   <div className="armeniagov-form-group">
     <Label for="address-line-1">
-      Address line 1
+      Առաջին հասցեն
     </Label>
 
     <TextInput name="address-line-1"/>
@@ -17,7 +17,7 @@ const code =
 
   <div className="armeniagov-form-group">
     <Label for="address-line-2">
-      Address line 2 (optional)
+      Երկրորդ հասցեն (կարելի է չլրացնել)
     </Label>
 
     <TextInput name="address-line-2"/>
@@ -40,13 +40,13 @@ export function FieldsetDoc() {
       <hr/>
 
       <Fieldset
-        legend="Question"
+        legend="Հարցում"
         legendSize="l" // 's' | 'm' | 'l' | 'xl', default: 'l'
         legendHeading // use if this is the only fieldset on the page
       >
         <div className="armeniagov-form-group">
           <Label for="address-line-1">
-            Address line 1
+            Առաջին հասցեն
           </Label>
 
           <TextInput name="address-line-1"/>
@@ -54,7 +54,7 @@ export function FieldsetDoc() {
 
         <div className="armeniagov-form-group">
           <Label for="address-line-2">
-            Address line 2 (optional)
+            Երկրորդ հասցեն (կարելի է չլրացնել)
           </Label>
 
           <TextInput name="address-line-2"/>

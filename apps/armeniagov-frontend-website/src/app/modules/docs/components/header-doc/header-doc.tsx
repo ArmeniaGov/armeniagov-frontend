@@ -3,17 +3,20 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
 `<Header
-  serviceName='Components'
+  serviceName='Ծառայություն'
   homeHref="/"
   navigation={[{
-    title: 'Link one',
+    id: 'one',
+    title: 'Հղում մեկ',
     href: '/one'
   }, {
-    title: 'Link Two',
+    id: 'two',
+    title: 'Հղում երկու',
     href: '/two',
     active: true
   }, {
-    title: 'Link Three',
+    id: 'three',
+    title: 'Հղում երեք',
     href: '/three'
   }]}
   onNavigationChange={console.log}
@@ -35,20 +38,20 @@ export function HeaderDoc() {
       <hr/>
 
       <Header
-        serviceName='Components'
+        serviceName='Ծառայություն'
         homeHref="/"
         navigation={[{
           id: 'one',
-          title: 'Link one',
+          title: 'Հղում մեկ',
           href: '/one'
         }, {
           id: 'two',
-          title: 'Link Two',
+          title: 'Հղում երկու',
           href: '/two',
           active: true
         }, {
           id: 'three',
-          title: 'Link Three',
+          title: 'Հղում երեք',
           href: '/three'
         }]}
         onNavigationChange={console.log}

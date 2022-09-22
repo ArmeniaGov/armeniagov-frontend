@@ -4,13 +4,13 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 const code = 
 `<Breadcrumbs
   items={[{
-    title: 'Home',
+    title: 'Սկիզբ',
     href: '/'
   }, {
-    title: 'Passports, travel and living abroad',
+    title: 'ճանապարհորդություններ և կյանք արտասահմանում',
     href: '/passports-travel-living-abroad'
   }, {
-    title: 'Travel abroad',
+    title: 'Ճանապարհորդություններ',
     href: '/passports-travel-living-abroad/travel-abroad'
   }]}
   collapseOnMobile
@@ -35,13 +35,13 @@ export function BreadcrumbsDoc() {
 
       <Breadcrumbs
         items={[{
-          title: 'Home',
+          title: 'Սկիզբ',
           href: '/'
         }, {
-          title: 'Passports, travel and living abroad',
+          title: 'ճանապարհորդություններ և կյանք արտասահմանում',
           href: '/passports-travel-living-abroad'
         }, {
-          title: 'Travel abroad',
+          title: 'Ճանապարհորդություններ',
           href: '/passports-travel-living-abroad/travel-abroad'
         }]}
         collapseOnMobile

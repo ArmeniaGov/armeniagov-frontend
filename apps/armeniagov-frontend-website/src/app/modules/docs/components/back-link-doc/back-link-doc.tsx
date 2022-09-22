@@ -1,7 +1,7 @@
 import { BackLink } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-const code = `<BackLink href='#'>Go back</BackLink>`;
+const code = `<BackLink href='#'>Վերադառնալ</BackLink>`;
 
 export function BackLinkDoc() {
   return (
@@ -18,7 +18,7 @@ export function BackLinkDoc() {
 
     <hr/>
 
-    <BackLink href='#'>Go back</BackLink>
+    <BackLink href='#'>Վերադառնալ</BackLink>
    </>
   );
 }

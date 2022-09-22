@@ -4,7 +4,7 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 const code =
 `<DateInput id="passport-input">
   <FormGroup>
-    <Label size='s'>Day</Label>
+    <Label size='s'>Օր</Label>
     <TextInput
       name='location'
       fixedCharacterWidth='2'
@@ -14,7 +14,7 @@ const code =
     />
   </FormGroup>
   <FormGroup>
-    <Label size='s'>Month</Label>
+    <Label size='s'>Ամիս</Label>
     <TextInput
       name='location'
       fixedCharacterWidth='2'
@@ -24,7 +24,7 @@ const code =
     />
   </FormGroup>
   <FormGroup>
-    <Label size='s'>Year</Label>
+    <Label size='s'>Տարի</Label>
     <TextInput
       name='location'
       fixedCharacterWidth='3'
@@ -52,7 +52,7 @@ export function DateInputDoc() {
 
       <DateInput id="passport-input">
         <FormGroup>
-          <Label size='s'>Day</Label>
+          <Label size='s'>Օր</Label>
           <TextInput
             name='location'
             fixedCharacterWidth='2'
@@ -62,7 +62,7 @@ export function DateInputDoc() {
           />
         </FormGroup>
         <FormGroup>
-          <Label size='s'>Month</Label>
+          <Label size='s'>Ամիս</Label>
           <TextInput
             name='location'
             fixedCharacterWidth='2'
@@ -72,7 +72,7 @@ export function DateInputDoc() {
           />
         </FormGroup>
         <FormGroup>
-          <Label size='s'>Year</Label>
+          <Label size='s'>Տարի</Label>
           <TextInput
             name='location'
             fixedCharacterWidth='4'

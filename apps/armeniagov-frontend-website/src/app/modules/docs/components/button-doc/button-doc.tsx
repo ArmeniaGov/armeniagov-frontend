@@ -2,11 +2,11 @@ import { Button } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code = 
-`<Button>Hello Armenia!</Button>
-<Button disabled>Hello Armenia!</Button>
-<Button secondary>Hello Armenia!</Button>
-<Button warning>Hello Armenia!</Button>
-<Button start>Hello Armenia!</Button>
+`<Button>Ողջույն Հայաստան!</Button>
+<Button disabled>Ողջույն Հայաստան!</Button>
+<Button secondary>Ողջույն Հայաստան!</Button>
+<Button warning>Ողջույն Հայաստան!</Button>
+<Button start>Ողջույն Հայաստան!</Button>
 `;
 
 export function ButtonDoc() {
@@ -24,11 +24,11 @@ export function ButtonDoc() {
 
       <hr/>
 
-      <Button>Hello Armenia!</Button><br/>
-      <Button disabled>Hello Armenia!</Button><br/>
-      <Button secondary>Hello Armenia!</Button><br/>
-      <Button warning>Hello Armenia!</Button><br/>
-      <Button start>Hello Armenia!</Button><br/>
+      <Button>Ողջույն Հայաստան!</Button><br/>
+      <Button disabled>Ողջույն Հայաստան!</Button><br/>
+      <Button secondary>Ողջույն Հայաստան!</Button><br/>
+      <Button warning>Ողջույն Հայաստան!</Button><br/>
+      <Button start>Ողջույն Հայաստան!</Button><br/>
     </>
   );
 }

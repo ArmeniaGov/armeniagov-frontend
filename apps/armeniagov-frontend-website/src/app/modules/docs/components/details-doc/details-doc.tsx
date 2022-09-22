@@ -3,9 +3,9 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const code =
 `<Details
-  details='Have a citizenship or a permanent residence of Armenia'
+  details='Դուք պետք է ունենաք ՀՀ քաղաքացիություն կամ համարվեք ՀՀ ռեզիդենտ'
 >
-  You have to be a resident of Armenia
+  Դուք պետք է լինեք ՀՀ ռեզիդենտ
 </Details>`;
 
 export function DetailsDoc() {
@@ -24,9 +24,9 @@ export function DetailsDoc() {
       <hr/>
 
       <Details
-        details='Have a citizenship or a permanent residence of Armenia'
+        details='Դուք պետք է ունենաք ՀՀ քաղաքացիություն կամ համարվեք ՀՀ ռեզիդենտ'
       >
-        You have to be a resident of Armenia
+        Դուք պետք է լինեք ՀՀ ռեզիդենտ
       </Details>
     </>
   );
