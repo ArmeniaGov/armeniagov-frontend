@@ -3,7 +3,7 @@
 
 @include armeniagov-exports("armeniagov/component/header") {
 
-  $armeniagov-header-background: armeniagov-colour("black");
+  $armeniagov-header-background: #1d2f6f /*armeniagov-colour("black")*/;
   $armeniagov-header-border-color: $armeniagov-brand-colour;
   $armeniagov-header-border-width: armeniagov-spacing(2);
   $armeniagov-header-text: armeniagov-colour("white");
