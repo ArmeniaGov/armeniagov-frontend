@@ -31,137 +31,137 @@ import {
 export default {
     subNaviagation: [
         {
-            "title": "Accordion",
+            "title": "Ակորդեոն (Accordion)",
             "element": <AccordionDoc/>,
             "path": "/components/accordion"
         },
         {
-            "title": "Back link",
+            "title": "Հետադարձ հղում (Back link)",
             "element": <BackLinkDoc/>,
             "path": "/components/back-link"
         },
         {
-            "title": "Breadcrumbs",
+            "title": "Հացի փշրանքներ (Breadcrumbs)",
             "element": <BreadcrumbsDoc/>,
             "path": "/components/breadcrumbs"
         },
         {
-            "title": "Button",
+            "title": "Կոճակ (Button)",
             "element": <ButtonDoc/>,
             "path": "/components/button"
         },
         {
-            "title": "Checkboxes",
+            "title": "Նշավանդակներ (Checkboxes)",
             "element": <CheckboxesDoc/>,
             "path": "/components/checkboxes"
         },
         {
-            "title": "Date input",
+            "title": "Ամսաթվի մուտքագրում (Date input)",
             "element": <DateInputDoc/>,
             "path": "/components/date-input"
         },
         {
-            "title": "Details",
+            "title": "Մանրամասներ (Details)",
             "element": <DetailsDoc/>,
             "path": "/components/details"
         },
         {
-            "title": "Error message",
+            "title": "Սխալի հաղորդագրություն (Error message)",
             "element": <ErrorMessageDoc/>,
             "path": "/components/error-message"
         },
         {
-            "title": "Error summary",
+            "title": "Սխալի ամփոփում (Error summary)",
             "element": <ErrorSummaryDoc/>,
             "path": "/components/error-summary"
         },
         {
-            "title": "Fieldset",
+            "title": "Դաշտային հավաքածու (Fieldset)",
             "element": <FieldsetDoc/>,
             "path": "/components/fieldset"
         },
         {
-            "title": "File upload",
+            "title": "Ֆայլի վերբեռնում (File upload)",
             "element": <FileUploadDoc/>,
             "path": "/components/file-upload"
         },
         {
-            "title": "Footer",
+            "title": "Ստորագիր (Footer)",
             "element": <FooterDoc/>,
             "path": "/components/footer"
         },
         {
-            "title": "Header",
+            "title": "Գլխագիր (Header)",
             "element": <HeaderDoc/>,
             "path": "/components/header"
         },
         {
-            "title": "Inset text",
+            "title": "Ներդիր տեքստ (Inset text)",
             "element": <InsetTextDoc/>,
             "path": "/components/inset-text"
         },
         {
-            "title": "Notification banner",
+            "title": "Ծանուցման պաստառ (Notification banner)",
             "element": <NotificationBannerDoc/>,
             "path": "/components/notification-banner"
         },
         {
-            "title": "Pagination",
+            "title": "Էջավորում (Pagination)",
             "element": <PaginationDoc/>,
             "path": "/components/pagination"
         },
         {
-            "title": "Panel",
+            "title": "Վահանակ (Panel)",
             "element": <PanelDoc/>,
             "path": "/components/panel"
         },
         {
-            "title": "Phase banner",
+            "title": "Փուլային պաստառ (Phase banner)",
             "element": <PhaseBannerDoc/>,
             "path": "/components/phase-banner"
         },
         {
-            "title": "Radios",
+            "title": "Ռադիոներ (Radios)",
             "element": <RadiosDoc/>,
             "path": "/components/radios"
         },
         {
-            "title": "Select",
+            "title": "Ընտրել (Select)",
             "element": <SelectDoc/>,
             "path": "/components/select"
         },
         {
-            "title": "Summary list",
+            "title": "Ամփոփ ցուցակ (Summary list)",
             "element": <SummaryListDoc/>,
             "path": "/components/summary-list"
         },
         {
-            "title": "Table",
+            "title": "Աղյուսակ (Table)",
             "element": <TableDoc/>,
             "path": "/components/table"
         },
         {
-            "title": "Tabs",
+            "title": "Ներդիրներ (Tabs)",
             "element": <TabsDoc/>,
             "path": "/components/tabs"
         },
         {
-            "title": "Tag",
+            "title": "Պիտակ (Tag)",
             "element": <TagDoc/>,
             "path": "/components/tag"
         },
         {
-            "title": "Text input",
+            "title": "Տեքստի մուտքագրում (Text input)",
             "element": <TextInputDoc/>,
             "path": "/components/text-input"
         },
         {
-            "title": "Textarea",
+            "title": "Տեքստի տարածք (Textarea)",
             "element": <TextareaDoc/>,
             "path": "/components/textarea"
         },
         {
-            "title": "Warning text",
+            "title": "Զգուշացնող տեքստ (Warning text)",
             "element": <WarningTextDoc/>,
             "path": "/components/warning-text"
         }
