@@ -1,13 +1,68 @@
-import styles from './checkboxes-doc.module.scss';
+import { Checkboxes } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface CheckboxesDocProps {}
+const code =
+`<Checkboxes
+  name='passport'
+  items={[{
+    title: 'Armenian',
+    hint: 'including Artsakh',
+    checked: true,
+    value: 'armenian'
+  }, {
+    title: 'Russian',
+    value: 'russian',
+    conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+  }, {
+    title: 'Citizen of another country',
+    value: 'other',
+    conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+  }, {
+    title: 'No citizenship',
+    value: 'none',
+    exclusive: true
+  }]}
+  onChange={console.log}
+/>`;
 
-export function CheckboxesDoc(props: CheckboxesDocProps) {
+export function CheckboxesDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to CheckboxesDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <Checkboxes
+        name='passport'
+        items={[{
+          title: 'Armenian',
+          hint: 'including Artsakh',
+          checked: true,
+          value: 'armenian'
+        }, {
+          title: 'Russian',
+          value: 'russian',
+          conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+        }, {
+          title: 'Citizen of another country',
+          value: 'other',
+          conditional: <p className="armeniagov-body">Do you have a permanent residency in Armenia?</p>
+        }, {
+          title: 'No citizenship',
+          value: 'none',
+          exclusive: true
+        }]}
+        onChange={console.log}
+      />
+    </>
   );
 }
 

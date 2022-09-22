@@ -3,9 +3,7 @@ import {
     BackLinkDoc,
     BreadcrumbsDoc,
     ButtonDoc,
-    CharacterCountDoc,
     CheckboxesDoc,
-    CookieBannerDoc,
     DateInputDoc,
     DetailsDoc,
     ErrorMessageDoc,
@@ -54,19 +52,9 @@ export default {
             "path": "/components/button"
         },
         {
-            "title": "Character count",
-            "element": <CharacterCountDoc/>,
-            "path": "/components/character-count"
-        },
-        {
             "title": "Checkboxes",
             "element": <CheckboxesDoc/>,
             "path": "/components/checkboxes"
-        },
-        {
-            "title": "Cookie banner",
-            "element": <CookieBannerDoc/>,
-            "path": "/components/cookie-banner"
         },
         {
             "title": "Date input",

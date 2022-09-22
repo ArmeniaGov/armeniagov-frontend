@@ -1,13 +1,88 @@
-import styles from './date-input-doc.module.scss';
+import { DateInput, FormGroup, Label, TextInput } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface DateInputDocProps {}
+const code =
+`<DateInput id="passport-input">
+  <FormGroup>
+    <Label size='s'>Day</Label>
+    <TextInput
+      name='location'
+      fixedCharacterWidth='2'
+      error={false}
+      inputMode='numeric'
+      onChange={console.log}
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label size='s'>Month</Label>
+    <TextInput
+      name='location'
+      fixedCharacterWidth='2'
+      error={false}
+      inputMode='numeric'
+      onChange={console.log}
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label size='s'>Year</Label>
+    <TextInput
+      name='location'
+      fixedCharacterWidth='3'
+      error={false}
+      inputMode='numeric'
+      onChange={console.log}
+    />
+  </FormGroup>
+</DateInput>`;
 
-export function DateInputDoc(props: DateInputDocProps) {
+export function DateInputDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to DateInputDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <DateInput id="passport-input">
+        <FormGroup>
+          <Label size='s'>Day</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='2'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label size='s'>Month</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='2'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label size='s'>Year</Label>
+          <TextInput
+            name='location'
+            fixedCharacterWidth='4'
+            error={false}
+            inputMode='numeric'
+            onChange={console.log}
+          />
+        </FormGroup>
+      </DateInput>
+    </>
   );
 }
 

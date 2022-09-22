@@ -1,13 +1,25 @@
-import styles from './back-link-doc.module.scss';
+import { BackLink } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface BackLinkDocProps {}
+const code = `<BackLink href='#'>Go back</BackLink>`;
 
-export function BackLinkDoc(props: BackLinkDocProps) {
+export function BackLinkDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to BackLinkDoc!</h1>
-    </div>
+   <>
+    <CopyBlock
+      text={code}
+      theme={atomOneDark}
+      startingLineNumber={1}
+      language="jsx"
+      showLineNumbers
+      codeBlock
+      wrapLines
+    />
+
+    <hr/>
+
+    <BackLink href='#'>Go back</BackLink>
+   </>
   );
 }
 

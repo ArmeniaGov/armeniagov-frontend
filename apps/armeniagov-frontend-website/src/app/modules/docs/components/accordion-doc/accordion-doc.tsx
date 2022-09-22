@@ -1,5 +1,5 @@
 import { Accordion } from "@armeniagov/components-react";
-import { CopyBlock, dracula, atomOneDark } from "react-code-blocks";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 /* eslint-disable-next-line */
 // export interface AccordionDocProps {}

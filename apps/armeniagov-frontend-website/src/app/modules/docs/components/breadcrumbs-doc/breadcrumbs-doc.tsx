@@ -1,13 +1,54 @@
-import styles from './breadcrumbs-doc.module.scss';
+import { Breadcrumbs } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface BreadcrumbsDocProps {}
+const code = 
+`<Breadcrumbs
+  items={[{
+    title: 'Home',
+    href: '/'
+  }, {
+    title: 'Passports, travel and living abroad',
+    href: '/passports-travel-living-abroad'
+  }, {
+    title: 'Travel abroad',
+    href: '/passports-travel-living-abroad/travel-abroad'
+  }]}
+  collapseOnMobile
+  preventDefault
+  onBreadcrumbClick={console.log}
+/>`;
 
-export function BreadcrumbsDoc(props: BreadcrumbsDocProps) {
+export function BreadcrumbsDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to BreadcrumbsDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <Breadcrumbs
+        items={[{
+          title: 'Home',
+          href: '/'
+        }, {
+          title: 'Passports, travel and living abroad',
+          href: '/passports-travel-living-abroad'
+        }, {
+          title: 'Travel abroad',
+          href: '/passports-travel-living-abroad/travel-abroad'
+        }]}
+        collapseOnMobile
+        preventDefault
+        onBreadcrumbClick={console.log}
+      />
+    </>
   );
 }
 

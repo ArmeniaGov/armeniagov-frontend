@@ -1,13 +1,34 @@
-import styles from './details-doc.module.scss';
+import { Details } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface DetailsDocProps {}
+const code =
+`<Details
+  details='Have a citizenship or a permanent residence of Armenia'
+>
+  You have to be a resident of Armenia
+</Details>`;
 
-export function DetailsDoc(props: DetailsDocProps) {
+export function DetailsDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to DetailsDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <Details
+        details='Have a citizenship or a permanent residence of Armenia'
+      >
+        You have to be a resident of Armenia
+      </Details>
+    </>
   );
 }
 
