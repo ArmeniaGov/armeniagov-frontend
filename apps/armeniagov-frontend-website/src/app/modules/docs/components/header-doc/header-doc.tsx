@@ -1,13 +1,59 @@
-import styles from './header-doc.module.scss';
+import { Header } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface HeaderDocProps {}
+const code =
+`<Header
+  serviceName='Components'
+  homeHref="/"
+  navigation={[{
+    title: 'Link one',
+    href: '/one'
+  }, {
+    title: 'Link Two',
+    href: '/two',
+    active: true
+  }, {
+    title: 'Link Three',
+    href: '/three'
+  }]}
+  onNavigationChange={console.log}
+/>`;
 
-export function HeaderDoc(props: HeaderDocProps) {
+export function HeaderDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to HeaderDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <Header
+        serviceName='Components'
+        homeHref="/"
+        navigation={[{
+          id: 'one',
+          title: 'Link one',
+          href: '/one'
+        }, {
+          id: 'two',
+          title: 'Link Two',
+          href: '/two',
+          active: true
+        }, {
+          id: 'three',
+          title: 'Link Three',
+          href: '/three'
+        }]}
+        onNavigationChange={console.log}
+      />
+    </>
   );
 }
 

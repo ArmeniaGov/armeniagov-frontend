@@ -1,13 +1,38 @@
-import styles from './error-summary-doc.module.scss';
+import { ErrorSummary } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface ErrorSummaryDocProps {}
+const code =
+`<ErrorSummary
+  title='There is a problem'
+  errors={[
+    <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
+    <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+  ]}
+/>`;
 
-export function ErrorSummaryDoc(props: ErrorSummaryDocProps) {
+export function ErrorSummaryDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to ErrorSummaryDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <ErrorSummary
+        title='There is a problem'
+        errors={[
+          <a href="#passport-issued-day">The date your passport was issued must be in the past</a>,
+          <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+        ]}
+      />
+    </>
   );
 }
 

@@ -1,13 +1,66 @@
-import styles from './fieldset-doc.module.scss';
+import { Fieldset, Label, TextInput } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface FieldsetDocProps {}
+const code =
+`<Fieldset
+  legend="Question"
+  legendSize="l" // 's' | 'm' | 'l' | 'xl', default: 'l'
+  legendHeading // use if this is the only fieldset on the page
+>
+  <div className="armeniagov-form-group">
+    <Label for="address-line-1">
+      Address line 1
+    </Label>
 
-export function FieldsetDoc(props: FieldsetDocProps) {
+    <TextInput name="address-line-1"/>
+  </div>
+
+  <div className="armeniagov-form-group">
+    <Label for="address-line-2">
+      Address line 2 (optional)
+    </Label>
+
+    <TextInput name="address-line-2"/>
+  </div>
+</Fieldset>`;
+
+export function FieldsetDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to FieldsetDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <Fieldset
+        legend="Question"
+        legendSize="l" // 's' | 'm' | 'l' | 'xl', default: 'l'
+        legendHeading // use if this is the only fieldset on the page
+      >
+        <div className="armeniagov-form-group">
+          <Label for="address-line-1">
+            Address line 1
+          </Label>
+
+          <TextInput name="address-line-1"/>
+        </div>
+
+        <div className="armeniagov-form-group">
+          <Label for="address-line-2">
+            Address line 2 (optional)
+          </Label>
+
+          <TextInput name="address-line-2"/>
+        </div>
+      </Fieldset>
+    </>
   );
 }
 

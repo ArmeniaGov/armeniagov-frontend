@@ -1,13 +1,26 @@
-import styles from './error-message-doc.module.scss';
+import { ErrorMessage } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface ErrorMessageDocProps {}
+const code =
+`<ErrorMessage>Enter a correct location</ErrorMessage>`;
 
-export function ErrorMessageDoc(props: ErrorMessageDocProps) {
+export function ErrorMessageDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to ErrorMessageDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <ErrorMessage>Enter a correct location</ErrorMessage>
+    </>
   );
 }
 

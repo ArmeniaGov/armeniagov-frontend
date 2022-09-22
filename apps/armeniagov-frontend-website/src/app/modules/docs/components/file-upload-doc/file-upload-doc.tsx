@@ -1,13 +1,42 @@
-import styles from './file-upload-doc.module.scss';
+import { FileUpload, Label, Hint, FormGroup } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface FileUploadDocProps {}
+const code =
+`<FormGroup>
+  <Label size="l">Upload a file</Label>
+  <Hint>About rabis music</Hint>
+  <FileUpload
+    name="fille-gago"
+    accept=".jpg,.png"
+    onChange={console.log}
+  />
+</FormGroup>`;
 
-export function FileUploadDoc(props: FileUploadDocProps) {
+export function FileUploadDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to FileUploadDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+      />
+
+      <hr/>
+
+      <FormGroup>
+        <Label size="l">Upload a file</Label>
+        <Hint>About rabis music</Hint>
+        <FileUpload
+          name="fille-gago"
+          accept=".jpg,.png"
+          onChange={console.log}
+        />
+      </FormGroup>
+    </>
   );
 }
 

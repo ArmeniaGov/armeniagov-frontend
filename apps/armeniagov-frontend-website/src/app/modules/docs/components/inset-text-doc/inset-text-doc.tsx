@@ -1,13 +1,27 @@
-import styles from './inset-text-doc.module.scss';
+import { InsetText } from "@armeniagov/components-react";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-/* eslint-disable-next-line */
-export interface InsetTextDocProps {}
+const code =
+`<InsetText>Ձեր հարցումը կարող է տևել մինչև 4 շաբաթ</InsetText>`;
 
-export function InsetTextDoc(props: InsetTextDocProps) {
+export function InsetTextDoc() {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to InsetTextDoc!</h1>
-    </div>
+    <>
+      <CopyBlock
+        text={code}
+        theme={atomOneDark}
+        startingLineNumber={1}
+        language="jsx"
+        showLineNumbers
+        codeBlock
+        wrapLines
+        wrapLongLines
+      />
+
+      <hr/>
+
+      <InsetText>Ձեր հարցումը կարող է տևել մինչև 4 շաբաթ</InsetText>
+    </>
   );
 }
 
