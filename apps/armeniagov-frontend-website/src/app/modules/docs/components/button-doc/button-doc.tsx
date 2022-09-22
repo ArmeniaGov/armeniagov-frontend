@@ -1,7 +1,7 @@
 import { Button } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-const code = 
+const code =
 `<Button>Ողջույն Հայաստան!</Button>
 <Button disabled>Ողջույն Հայաստան!</Button>
 <Button secondary>Ողջույն Հայաստան!</Button>

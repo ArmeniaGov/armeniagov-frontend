@@ -4,7 +4,7 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 /* eslint-disable-next-line */
 // export interface AccordionDocProps {}
 
-const code = 
+const code =
 `<Accordion sections={
     [
         {

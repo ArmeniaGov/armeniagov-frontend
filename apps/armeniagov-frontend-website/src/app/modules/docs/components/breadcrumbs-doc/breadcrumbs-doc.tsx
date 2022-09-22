@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-const code = 
+const code =
 `<Breadcrumbs
   items={[{
     title: 'Սկիզբ',
