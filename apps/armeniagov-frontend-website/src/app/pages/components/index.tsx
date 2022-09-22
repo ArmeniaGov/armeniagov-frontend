@@ -1,22 +1,22 @@
 export function ComponentsIndex() {
   return (
     <>
-      <h1>Components</h1>
+      <h1>Բաղադրիչներ</h1>
 
       <p>
-        Components are reusable parts of the user interface that have been made to support a variety of applications.
+        Բաղադրիչները օգտատիրոջ միջերեսի մի քանի անգամ օգտագործվող մասեր են, որոնք ստեղծվել են մի շարք հավելվածներ աջակցելու համար:
       </p>
 
       <p>
-        You can use individual components in many different patterns and contexts. For example, you can use the text input component to ask for an email address, a National Insurance number or someone’s name.
+        Դուք կարող եք օգտագործել առանձին բաղադրիչներ շատ տարբեր նախշերով և համատեքստերում: Օրինակ, դուք կարող եք օգտագործել տեքստի մուտքագրման բաղադրիչը՝ էլփոստի հասցե, Ազգային ապահովագրության համար կամ որևէ մեկի անունը խնդրելու համար:
       </p>
 
       <p>
-        Each component in the GOV.UK Design System has coded examples. If you’re using the GOV.UK Prototype Kit, or have included GOV.UK Frontend in your build, coded examples will render the same as in the Design System.
+        GOV.AM Design System-ի յուրաքանչյուր բաղադրիչ ունի կոդավորված օրինակներ: Եթե դուք օգտագործում եք GOV.AM Prototype Kit-ը կամ ներառել եք GOV.AM Frontend-ը ձեր կառուցվածքում, կոդավորված օրինակները կարտացոլվեն նույնը, ինչ Դիզայնի համակարգում:
       </p>
 
       <p>
-        The GOV.UK Design System’s code is public and freely available under a Massachusetts Institute of Technology (MIT) license. You can find our code repositories on GitHub, where we code in the open.
+        GOV.AM Design System-ի կոդը հրապարակային է և անվճար հասանելի է Մասաչուսեթսի տեխնոլոգիական ինստիտուտի (MIT) լիցենզիայի ներքո: Դուք կարող եք գտնել մեր կոդերի պահեստները GitHub-ում, որտեղ մենք կոդավորում ենք բաց եղանակով:
       </p>
     </>
   );
