@@ -19,22 +19,22 @@ export function Header(props: HeaderProps) {
     <header className={`armeniagov-header ${props.className ? props.className : ''}`} role="banner">
       <div className="armeniagov-header__container armeniagov-width-container">
         <div className="armeniagov-header__logo">
-          <a href={homeHref} className="armeniagov-header__link armeniagov-header__link--homepage">
-            <span className="armeniagov-header__logotype">
-              <div className="armeniagov-header__logotype-coat-of-arms"></div>
+          <span className="armeniagov-header__logotype">
+            <div className="armeniagov-header__logotype-coat-of-arms"></div>
+          </span>
 
-              <span className="armeniagov-header__logotype-text">
-                GOV.AM
-              </span>
+          <a href={homeHref} className="armeniagov-header__link armeniagov-header__link--homepage">
+            <span className="armeniagov-header__logotype-homepage-text">
+              GOV.AM
+            </span>
+
+            <span className="armeniagov-header__logotype-service-name">
+              {props.serviceName}
             </span>
           </a>
         </div>
 
         <div className="armeniagov-header__content">
-          <a href={homeHref} className="armeniagov-header__link armeniagov-header__service-name">
-            {props.serviceName}
-          </a>
-
           {
             props.navigation && props.navigation.length > 0 ?
             (

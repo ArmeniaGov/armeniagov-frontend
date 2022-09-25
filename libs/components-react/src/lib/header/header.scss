@@ -3,8 +3,8 @@
 
 @include armeniagov-exports("armeniagov/component/header") {
 
-  $armeniagov-header-background: #1d2f6f /*armeniagov-colour("black")*/;
-  $armeniagov-header-border-color: $armeniagov-brand-colour;
+  $armeniagov-header-background: armeniagov-colour("dark-blue");
+  $armeniagov-header-border-color: armeniagov-colour("blue");
   $armeniagov-header-border-width: armeniagov-spacing(2);
   $armeniagov-header-text: armeniagov-colour("white");
   $armeniagov-header-link-active: #1d8feb;
@@ -12,20 +12,19 @@
   $armeniagov-header-link-underline-thickness: 3px;
 
   // Based on the armeniagov-crest-2x.png image dimensions.
-  $armeniagov-header-coat-of-arms-image-width: 36px;
-  $armeniagov-header-coat-of-arms-image-height: 30px;
+  $armeniagov-header-coat-of-arms-image-width: 50px;
+  $armeniagov-header-coat-of-arms-image-height: 47px;
 
   .armeniagov-header {
     @include armeniagov-font($size: 16);
 
-    border-bottom: armeniagov-spacing(2) solid armeniagov-colour("white");
     color: $armeniagov-header-text;
     background: $armeniagov-header-background;
+    border-bottom: $armeniagov-header-border-width solid $armeniagov-header-border-color;
   }
 
   .armeniagov-header__container--full-width {
     padding: 0 armeniagov-spacing(3);
-    border-color: $armeniagov-header-border-color;
 
     .armeniagov-header__menu-button {
       right: armeniagov-spacing(3);
@@ -35,9 +34,8 @@
   .armeniagov-header__container {
     @include armeniagov-clearfix;
     position: relative;
-    margin-bottom: -$armeniagov-header-border-width;
-    padding-top: armeniagov-spacing(2);
-    border-bottom: $armeniagov-header-border-width solid $armeniagov-header-border-color;
+    padding: armeniagov-spacing(2) armeniagov-spacing(7) 0;
+    box-sizing: border-box;
   }
 
   .armeniagov-header__logotype {
@@ -63,7 +61,6 @@
 
   .armeniagov-header__logotype-coat-of-arms {
     display: inline-block;
-    margin-right: 5px;
     fill: currentcolor;
     vertical-align: top;
     min-width: $armeniagov-header-coat-of-arms-image-width;
@@ -73,7 +70,7 @@
     background-size: $armeniagov-header-coat-of-arms-image-width $armeniagov-header-coat-of-arms-image-height;
     background-image: armeniagov-image-url("armeniagov-coat-of-arms-header.svg");
     @include armeniagov-device-pixel-ratio {
-      background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");
+      background-image: armeniagov-image-url("armeniagov-coat-of-arms-header.svg");
     }
   }
 
@@ -119,11 +116,9 @@
   .armeniagov-header__link--homepage {
     // Font size needs to be set on the link so that the box sizing is correct
     // in Firefox
-    @include armeniagov-font($size: false, $weight: bold);
+    @include armeniagov-font($size: 24, $weight: normal);
 
     display: inline-block;
-    margin-right: armeniagov-spacing(2);
-    font-size: 30px; // We don't have a mixin that produces 30px font size
     line-height: 1;
 
     @include armeniagov-media-query($from: tablet) {
@@ -157,13 +152,21 @@
     }
   }
 
-  // The armeniagov-header__link--service-name class is deprecated - use
-  // armeniagov-header__service-name instead.
-  .armeniagov-header__service-name,
-  .armeniagov-header__link--service-name {
+  .armeniagov-header__logotype-homepage-text {
     display: inline-block;
-    margin-bottom: armeniagov-spacing(2);
+    margin-right: armeniagov-spacing(1);
     @include armeniagov-font($size: 24, $weight: bold);
+
+    // Remove the gap after the logo if there's no product name to keep hover
+    // and focus states neat
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .armeniagov-header__logotype-service-name {
+    display: inline-block;
+    @include armeniagov-font($size: 16, $weight: normal);
   }
 
   .armeniagov-header__logo,
@@ -174,9 +177,12 @@
   .armeniagov-header__logo {
     @include armeniagov-responsive-margin(2, "bottom");
     padding-right: armeniagov-spacing(8);
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
 
     @include armeniagov-media-query ($from: desktop) {
-      width: 33.33%;
+      width: 66.66%;
       padding-right: $armeniagov-gutter-half;
       float: left;
       vertical-align: top;
