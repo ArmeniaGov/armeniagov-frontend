@@ -8,6 +8,8 @@
     $armeniagov-footer-border-top: $armeniagov-border-colour;
     $armeniagov-footer-text: $armeniagov-text-colour;
     $armeniagov-footer-link-hover-colour: null; // Only used with the legacy palette
+    $armeniagov-footer-border-color: armeniagov-colour("blue");
+    $armeniagov-footer-border-width: armeniagov-spacing(2);
 
     @if $armeniagov-use-legacy-palette {
       $armeniagov-footer-border-top: #a1acb2;
@@ -17,8 +19,8 @@
     }
 
     // Based on the armeniagov-crest-2x.png image dimensions.
-    $armeniagov-footer-crest-image-width-2x: 250px;
-    $armeniagov-footer-crest-image-height-2x: 204px;
+    $armeniagov-footer-crest-image-width-2x: 256px;
+    $armeniagov-footer-crest-image-height-2x: 242px;
     // Half the 2x image so that it fits the regular 1x size.
     $armeniagov-footer-crest-image-width: ($armeniagov-footer-crest-image-width-2x / 2);
     $armeniagov-footer-crest-image-height: ($armeniagov-footer-crest-image-height-2x / 2);
@@ -31,6 +33,7 @@
       border-top: 1px solid $armeniagov-footer-border-top;
       color: $armeniagov-footer-text;
       background: $armeniagov-footer-background;
+      border-top: $armeniagov-footer-border-width solid $armeniagov-footer-border-color;
     }
 
     .armeniagov-footer__link {
@@ -72,11 +75,13 @@
       margin-right: -$armeniagov-gutter-half;
       margin-left: -$armeniagov-gutter-half;
       flex-wrap: wrap; // Support: Flexbox
-      align-items: flex-end; // Support: Flexbox
       justify-content: center; // Support: Flexbox
     }
 
     .armeniagov-footer__meta-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       margin-right: $armeniagov-gutter-half;
       margin-bottom: armeniagov-spacing(5);
       margin-left: $armeniagov-gutter-half;
@@ -101,14 +106,10 @@
       forced-color-adjust: auto;
     }
 
-    .armeniagov-footer__licence-description {
-      display: inline-block;
-    }
-
     .armeniagov-footer__copyright-logo {
       display: inline-block;
       min-width: $armeniagov-footer-crest-image-width;
-      padding-top: ($armeniagov-footer-crest-image-height + armeniagov-spacing(2));
+      min-height: $armeniagov-footer-crest-image-height;
       background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");
       @include armeniagov-device-pixel-ratio {
         background-image: armeniagov-image-url("armeniagov-coat-of-arms.svg");

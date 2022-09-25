@@ -78,6 +78,10 @@ export function Footer(props: FooterProps) {
         <FooterNavigation navigation={props.navigation} />
 
         <div className="armeniagov-footer__meta">
+          <div className="armeniagov-footer__meta-item">
+            <div className="armeniagov-footer__copyright-logo"></div>
+          </div>
+
           <div className="armeniagov-footer__meta-item armeniagov-footer__meta-item--grow">
             <FooterLinks links={props.links} />
 
@@ -89,13 +93,9 @@ export function Footer(props: FooterProps) {
               )
             }
 
-            <span className="armeniagov-footer__licence-description">
-              Այս կայքը ստեղծվել է Հայաստանի Հանրապետության բարձր տեխնոլոգիական արդյունաբերության նախարարության թվայնացման թիմի կողմից
-            </span>
-          </div>
-
-          <div className="armeniagov-footer__meta-item">
-            <a className="armeniagov-footer__link armeniagov-footer__copyright-logo" href="https://hti.am/">© ՀՀ ԲՏԱ Նախարարություն</a>
+            <div className="armeniagov-footer__licence-description">
+              Այս կայքը ստեղծվել է <a className="armeniagov-footer__link" href="https://hti.am/">Հայաստանի Հանրապետության բարձր տեխնոլոգիական արդյունաբերության նախարարության</a> թվայնացման թիմի կողմից
+            </div>
           </div>
         </div>
       </div>
