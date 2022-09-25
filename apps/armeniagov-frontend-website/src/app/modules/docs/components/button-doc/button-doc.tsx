@@ -1,5 +1,6 @@
 import { Button } from "@armeniagov/components-react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
+import classes from "./button-doc.module.scss";
 
 const code =
 `<Button>Ողջույն Հայաստան!</Button>
@@ -24,11 +25,13 @@ export function ButtonDoc() {
 
       <hr/>
 
-      <Button>Ողջույն Հայաստան!</Button><br/>
-      <Button disabled>Ողջույն Հայաստան!</Button><br/>
-      <Button secondary>Ողջույն Հայաստան!</Button><br/>
-      <Button warning>Ողջույն Հայաստան!</Button><br/>
-      <Button start>Ողջույն Հայաստան!</Button><br/>
+      <div className={classes["button-doc-container"]}>
+        <Button className={classes["button-demo"]}>Ողջույն Հայաստան!</Button><br/>
+        <Button className={classes["button-demo"]} disabled>Ողջույն Հայաստան!</Button><br/>
+        <Button className={classes["button-demo"]} secondary>Ողջույն Հայաստան!</Button><br/>
+        <Button className={classes["button-demo"]} warning>Ողջույն Հայաստան!</Button><br/>
+        <Button className={classes["button-demo"]} start>Ողջույն Հայաստան!</Button><br/>
+      </div>
     </>
   );
 }
