@@ -34,7 +34,7 @@
   .armeniagov-header__container {
     @include armeniagov-clearfix;
     position: relative;
-    padding: armeniagov-spacing(2) armeniagov-spacing(7) 0;
+    padding-top: armeniagov-spacing(2);
     box-sizing: border-box;
   }
 
